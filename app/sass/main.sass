@@ -1,0 +1,1621 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "stylers"
+
+// START PAGE STYLES
+
+//HEADER
+.hamburger
+	padding-top: 0
+	padding-bottom: 0
+
+.mb-menu
+	position: fixed
+	left: 0
+	right: 0
+	top: 58.5px
+	bottom: 0
+	overflow-y: auto
+	height: 100%
+	z-index: 100
+	display: none
+	background-color: rgba(0,0,0, .9)
+
+	.navigation__list
+		display: block
+		padding: 0
+		margin: 0
+		padding-top: 40px
+		padding-bottom: 40px
+	.container
+		display: flex
+		height: 100%
+		flex-flow: column
+		align-items: center
+		justify-content: center
+		
+
+
+html.is-active
+	body
+		.mb-menu
+			display: block
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+	background-color: #fff
+.b-header
+	background-color: #2c3e74
+	padding: 15px 0
+	z-index: 100
+.navigation__list
+	display: flex
+	padding: 0
+	margin: 0
+	list-style-type: none
+	justify-content: space-between
+	flex-wrap: wrap
+	margin-left: -10px
+	margin-right: -10px
+	margin-top: -10px
+
+	li
+		padding-left: 10px
+		padding-right: 10px
+		margin-top: 10px
+		&.current
+			a
+				color: #01c3b6
+				&:after
+					width: 100%
+	a
+		color: #fff
+		text-transform: uppercase
+		text-decoration: none
+		font-family: gilroy-medium
+		font-size: 17px
+		position: relative
+		&:hover
+			color: #01c3b6
+			&:after
+				width: 100%
+		&:after
+			content: ''
+			position: absolute
+			transition: width .2s linear
+			left: 50%
+			width: 0
+			top: 100%
+			transform: translateX(-50%)
+			background-color: #01c3b6
+			height: 2px
+//END HEADER
+//main
+// main 1
+.section__1-top
+	background-color: #24366e
+	padding-top: 25px
+	.logo
+		margin-bottom: 15px
+.logo
+	max-width: 280px
+	width: 100%
+	text-align: right
+	color: #fff
+	&-info
+		display: block
+		font-family: gilroy-medium
+		font-size: 22px
+		margin: -13px 7px 0 0
+
+.preview__article
+	margin-bottom: 45px
+
+	h1
+		color: #fff
+		font-size: 36px
+		margin-bottom: 15px
+		max-width: 650px
+		width: 100%
+	p
+		font-size: 20px
+		color: #88fff7
+		font-family: proxima-light
+		max-width: 500px
+		width: 100%
+.programms-table
+	display: table
+	margin-bottom: 55px
+	.programms-table-r
+		.programms-table-cell
+			&:first-child
+				padding-right: 7px
+		&:last-child
+			.programms-table-cell
+				padding-bottom: 0
+.programms-table-r
+	display: table-row
+.programms-table-cell
+	display: table-cell
+	padding-bottom: 25px
+
+.programms-table-title
+	margin: 0
+	background-color: #fff
+	border-radius: 5px
+	padding: 0 7px 4px 7px
+	color: #233470
+	font-size: 17px
+	height: 21px
+	font-family: gilroy-bold
+	box-shadow: 0 0px 10px 0 rgba(34,50,108, 1)
+	display: inline-block
+	line-height: 20px
+	vertical-align: bottom
+	margin-left: -14px
+.test-btn
+	color: #fff
+	font-family: gilroy-medium
+	max-width: 296px
+	width: 100%
+	height: 66px
+	padding-left: 97px
+	line-height: 66px
+	display: block
+	text-decoration: none
+	background: rgb(142,255,246);
+	background: -moz-linear-gradient(top,  rgba(142,255,246,1) 0%, rgba(31,194,181,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(142,255,246,1) 0%,rgba(31,194,181,1) 100%);
+	background: linear-gradient(to bottom,  rgba(142,255,246,1) 0%,rgba(31,194,181,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8efff6', endColorstr='#1fc2b5',GradientType=0 );
+	box-shadow: 0 8px 10px rgba(102, 240, 230, .11)
+	border-radius: 25px
+	font-size: 27px
+	text-align: left
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		width: 29px
+		height: 39px
+		background: url(../img/text.png) center no-repeat
+		background-size: contain
+		left: 45px
+		top: 50%
+		transform: translateY(-50%)
+.section__1-top-left
+	padding-bottom: 105px
+	position: relative
+	z-index: 10
+
+.radial-bg-f
+	img
+		max-width: none
+		width: 2139px
+		position: relative
+		left: 50%
+		bottom: -24px
+		transform: translateX(-50%)
+.main-bg
+	position: absolute
+	left: -22%;
+	right: -22%;
+	top: -28%;
+
+.radial-bg-f-w
+	position: absolute
+	bottom: -4px
+	width: 1623px
+	height: 324px
+	right: -547px
+
+.free-lesson
+	background-color: #fff
+	max-width: 348px
+	width: 100%
+	padding: 30px 90px 40px 40px
+	position: absolute
+	bottom: 40px
+	right: 15px
+	border-radius: 5px
+	box-shadow: 0 10px 30px rgba(125,125,125, .22)
+	h4
+		color: #24356e
+		font-family: gilroy-extrabold
+		font-size: 30px
+		line-height: 1.2
+	[type="text"],
+	[type="tel"],
+	[type="email"]
+		border: 0
+		background: #fff
+		height: 32px
+		margin-top: 27px
+		border-bottom: 3px solid #24366e
+		font-family: gilroy-medium
+		font-size: 14.5px
+		width: 100%
+		max-width: 100%
+		min-width: 100%
+		&::placeholder
+			font-family: gilroy-medium
+			color: #24356e
+			text-transform: uppercase
+			opacity: 1
+
+	[type="submit"]
+		font-size: 25px
+		font-family: gilroy-extrabold
+		color: #fff
+		background: rgb(253,208,48);
+		background: -moz-linear-gradient(top,  rgba(253,208,48,1) 0%, rgba(253,138,37,1) 100%);
+		background: -webkit-linear-gradient(top,  rgba(253,208,48,1) 0%,rgba(253,138,37,1) 100%);
+		background: linear-gradient(to bottom,  rgba(253,208,48,1) 0%,rgba(253,138,37,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdd030', endColorstr='#fd8a25',GradientType=0 );
+		width: 100%
+		border-radius: 35px
+		height: 46px
+		line-height: 46px
+		box-shadow: 0 8px 10px rgba(255, 149, 1, .3)
+		border: none
+		cursor: pointer
+		margin-top: 40px
+
+.section__1-bottom
+	background-color: #fff
+	position: relative
+	z-index: 10
+	padding-top: 55px
+	padding-bottom: 75px
+.nb-couns
+	margin-bottom: 25px
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		top: -40px
+		bottom: 0
+		width: 1184px
+		height: 542px
+		left: -505px
+		background: url(../img/bslogo.png)  0  no-repeat
+
+.nb-couns-z, .nb-couns-z2
+	z-index: 10
+.about-right
+	width: 440px
+
+.nb-list
+	padding: 0
+	margin: 0
+	list-style-type: none
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin-left: -15px
+	margin-right: -15px
+	margin-top: -25px
+	&>li
+		width: 50%
+		display: flex
+		flex: 0 0 50%
+		flex-wrap: wrap
+		align-items: flex-start
+		padding-left: 15px
+		padding-right: 15px
+		align-items: center
+		margin-top: 25px
+		&:nth-child(1),
+		&:nth-child(3)
+			.nb-list-num
+				width: 65px
+				flex: 0 0 65px
+				margin-right: 30px
+		&:nth-child(2),
+		&:nth-child(4)
+			.nb-list-num
+				width: 90px
+				flex: 0 0 90px
+				margin-right: 14px
+
+		p
+			margin: 0
+			font-size: 21px
+			color: #233470
+			font-family: gilroy-black
+			line-height: 1
+			flex-grow: 1
+			flex-basis: 0
+			max-width: 100%
+.nb-list-num
+	font-family: gilroy-black
+	font-size: 38px
+	color: #01c1b4
+	line-height: 1
+	text-align: center
+.pr-title
+	font-size: 46px
+	color: #233470
+	font-family: proxima-bold
+	line-height: 1.1
+	margin-bottom: 40px
+	span
+		color: #01c1b4
+
+.about-right
+	border-radius: 40px 0 0 40px
+.weUs
+	background-color: #26e0d0
+	padding: 30px 0 30px 80px
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		left: 100%
+		top: 0
+		bottom: 0
+		background-color: #26e0d0
+		width: 50vw
+	h3
+		font-size: 46px
+		color: #233470
+		margin-bottom: 20px
+		font-family: proxima-bold
+		padding-left: 8px
+	ul
+		padding: 0
+		margin: 0
+		list-style-type: none
+		color: #233470
+		font-family: proxima-reg
+		font-size: 20px
+		li
+			position: relative
+			padding-left: 40px
+			margin-left: -40px
+			&:not(:last-child)
+				margin-bottom: 20px
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				top: 4px
+				width: 26px
+				height: 19px
+				background: url(../img/arrow.png) 0 0 no-repeat
+
+
+
+.study-methods
+	max-width: 640px
+	width: 100%
+	h4
+		font-size: 21px
+		color: #233470
+		font-family: proxima-bold
+		margin-bottom: 35px
+.result-studies
+	display: flex
+	flex-wrap: wrap
+	margin-left: -15px
+	margin-right: -15px
+	margin-top: -35px
+	.result-elem
+		padding-left: 15px
+		padding-right: 15px
+		width: 50%
+		flex: 0 0 50%
+		margin-top: 35px
+.result-elem
+	text-align: center
+	&-image
+		margin-bottom: 10px
+		height: 70px
+		display: flex
+		align-items: center
+		justify-content: center
+
+.result-elem-info
+	font-size: 15px
+	font-family: proxima-bold
+	p
+		margin: 0
+		color: #233470	
+	a
+		color: #ff9d11
+
+.qualityStude
+	background-color: #f6f7f9
+	padding: 30px 0 35px 57px
+	position: relative
+	margin-top: 115px
+	&:after
+		content: ''
+		position: absolute
+		left: 100%
+		top: 0
+		bottom: 0
+		background-color: #f6f7f9
+		width: 50vw
+	h3
+		text-transform: uppercase
+		font-size: 24px
+		color: #233470
+		margin-bottom: 25px
+		font-family: proxima-bold
+	ul
+		font-family: proxima-reg
+		font-size: 20px
+		color: #233470
+		padding: 0
+		margin: 0
+		list-style-type: none
+		li
+			position: relative
+			padding-left: 54px
+			margin-bottom: 20px
+			&:after
+				content: ''
+				position: absolute
+				left: 20px
+				top: 7px
+				width: 11px
+				height: 11px
+				border-radius: 11px
+				background-color: #24366e
+//end main 1
+
+
+
+//section 2
+.section__2
+	background-color: #f5f6f9
+	padding-top: 80px
+	padding-bottom: 105px
+.section-title
+	text-align: center
+	margin-bottom: 90px
+	color: #233470
+	font-size: 46px
+	font-family: proxima-bold
+	position: relative
+	&:after
+		content: attr(data-title)
+		position: absolute
+		top: 80px
+		right: calc(50% + 73px)
+		text-transform: uppercase
+		font-size: 121px
+		font-family: gilroy-black
+		line-height: 1
+		color: #e7e9ef
+		white-space: nowrap
+
+.pr-elem
+	background-color: #fff
+	position: relative
+	border-radius: 5px
+	padding: 25px
+	padding-bottom: 80px
+	padding-left: 30px
+	color: #24325f
+	text-decoration: none
+	display: block
+	transition: all .2s
+	min-height: 100%
+	h4
+		font-family: proxima-extrabold
+		font-size: 20.4px
+		margin-bottom: 15px
+		min-height: 51px
+	p, ul, ol
+		font-size: 15px
+	p
+		margin-bottom: 15px
+	&:after
+		content: ''
+		position: absolute
+		background-color: #26e0d0
+		left: -3px
+		right: -3px
+		top: -3px
+		bottom: -3px
+		border-radius: 5px
+		opacity: 0
+		visibility: hidden
+		transition: all .2s
+	&:hover
+		color: #fff
+		&:after
+			opacity: 1
+			visibility: visible
+		.pr-elem-next
+			background-color: #80ece4
+			&:after
+				background-color: #fff
+			&:before
+				background: url(../img/pr-arrow-gr.png) center no-repeat
+.pr-elem-inner
+	position: relative
+	z-index: 10
+.pr-elem-next
+	width: 65px
+	height: 65px
+	position: absolute
+	left: 20px
+	bottom: 20px
+	border-radius: 65px
+	background-color: #fafbfc
+	z-index: 10
+	&:after
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		width: 44px
+		height: 44px
+		border-radius: 44px
+		background-color: #26e0d0
+		transform: translate(-50%,-50%)
+	&:before
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%,-50%)
+		background: url(../img/pr-arrow.png) center no-repeat
+		width: 22px
+		height: 17px
+		z-index: 10
+
+.m3
+	margin-left: -3px
+	margin-right: -3px
+	margin-top: -3px
+.p3
+	padding-left: 1.5px
+	padding-right: 1.5px
+	margin-top: 3px
+
+.pr-discounts
+	min-height: 100%
+	background-color: #f19d3f
+	padding: 30px 21px 20px
+	h3
+		color: #fff
+		text-align: center
+		font-size: 26px
+		font-family: proxima-bold
+		margin-bottom: 15px
+.pr-discounts-inner
+	background-color: #fff
+	border-radius: 10px
+	padding: 15px
+	color: #24325f
+	font-size: 15px
+	margin: 0
+	list-style-type: none
+	li
+		&:not(:last-child)
+			margin-bottom: 10px
+	b
+		font-family: proxima-bold
+//end section 2
+
+//section 3
+.events-out
+	background-color: #d43538
+	color: #fff
+	position: relative
+	z-index: 10
+	
+	.free-lesson
+		position: relative
+		max-width: 348px
+		width: 100%
+		bottom: 0
+		margin-top: -20px
+		margin-bottom: -20px
+		left: 0
+		right: 0
+		h4
+			font-size: 40px
+.events-title
+	background-color: #fff
+	display: inline-block
+	margin-bottom: 25px
+	border-radius: 0 10px 10px 0
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		right: 100%
+		top: 0
+		bottom: 0
+		background-color: #fff
+		width: 50vw
+	h3
+		text-transform: uppercase
+		color: #d43538
+		font-size: 36px
+		font-family: gilroy-bold
+		padding-right: 50px
+.events
+	padding: 28px 0 40px
+	text-transform: uppercase
+	h4
+		font-size: 24px
+		font-family: gilroy-semibold
+		margin-bottom: 20px
+	.warning
+		font-size: 16px
+		font-family: gilroy-medium
+
+.summerEnglish
+	padding: 0
+	margin: 0
+	list-style-type: none
+	font-family: gilroy-medium
+	font-size: 36px
+	margin-bottom: 29px
+	li
+		&:not(:last-child)
+			margin-bottom: 3px
+	span
+		font-family: gilroy-black
+		background-color: #fff
+		border-radius: 10px
+		color: #d43538
+		padding-left: 15px
+		padding-right: 15px
+//end section 3
+
+//section 4
+.section__4
+	padding: 55px 0 85px
+	
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		top: 0
+		left: 0
+		right: -290px
+		background-color: #fff
+		border-radius: 0 0 1200px 0
+	.section-title
+		margin-bottom: 60px
+		&:after
+			right: calc(50% - 150px)
+			top: 115px
+			color: #f2f3f7
+.section__4-inner
+	position: relative
+	z-index: 10
+.enOnline-inner
+	position: relative
+	z-index: 10
+	padding: 45px 50px 30px 80px
+	h4
+		font-size: 24px
+		font-family: proxima-bold
+		margin-bottom: 20px
+	ul
+		padding: 0
+		margin: 0
+		list-style-type: none
+		font-size: 21px
+		li
+			margin-bottom: 15px
+			padding-left: 30px
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				width: 9px
+				height: 9px
+				background-color: #24366e
+				border-radius: 9px
+				left: 8px
+				top: 10px
+	p
+		font-size: 26px
+		font-family: proxima-bold
+		margin-bottom: 10px
+		margin-top: 65px
+.enOnline
+	position: relative
+	&:first-child
+		margin-bottom: 80px
+.enOnline-1
+	&:after
+		content: ''
+		position: absolute
+		left: -20px
+		right: 0
+		top: -20px
+		bottom: 0
+		background: url(../img/eonline01.png) 0 0 no-repeat
+.enOnline-2
+	&:after
+		content: ''
+		position: absolute
+		left: -20px
+		right: 0
+		top: -20px
+		bottom: 0
+		background: url(../img/eonline02.png) 0 0 no-repeat
+
+.enroll
+	width: 387px
+.enroll-image
+	max-width: 387px
+	width: 100%
+	border-radius: 15px
+	margin-bottom: 88px
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		left: 15px
+		right: -15px
+		top: 15px
+		bottom: -15px
+		background-color: #edeff2
+		border-radius: 15px
+	&:after
+		content: ''
+		display: block
+		padding-top: 73%
+.enroll-image-inner
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	z-index: 10
+	border-radius: 15px
+.bg__cover
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+
+.enr-btn
+	text-decoration: none
+	font-size: 25px
+	font-family: gilroy-extrabold
+	color: #fff
+	background: rgb(253,208,48);
+	background: -moz-linear-gradient(top,  rgba(253,208,48,1) 0%, rgba(253,138,37,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(253,208,48,1) 0%,rgba(253,138,37,1) 100%);
+	background: linear-gradient(to bottom,  rgba(253,208,48,1) 0%,rgba(253,138,37,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdd030', endColorstr='#fd8a25',GradientType=0 )
+	border-radius: 35px
+	height: 46px
+	line-height: 46px
+	box-shadow: 0 8px 10px rgba(255, 149, 1, .3)
+	border: none
+	cursor: pointer
+	display: block
+	width: 217px
+	text-align: center
+//end section 4
+
+//section 5
+.section__5
+	position: relative
+	
+	padding-top: 50px
+	padding-bottom: 15px
+	color: #fff
+	.section-title
+		color: #fff
+		margin-bottom: 35px
+		font-size: 45px
+		&:after
+			content: none
+
+.corp-section-inner
+	position: relative
+	z-index: 10
+	
+.corp-section-bg
+	position: absolute
+	top: -250px
+	left: -172px
+	right: 0
+	bottom: 0
+	background-color: #2e4078
+	background-position: bottom center
+	border-radius: 0 0 0 400px
+	z-index: -1
+.corp-top
+	font-size: 27px
+	p
+		margin-bottom: 22px
+	margin-bottom: 75px
+
+.corp-detail-title
+	font-size: 32px
+	font-family: proxima-bold
+	margin-bottom: 40px
+
+.corp-detail-box
+	margin-bottom: 45px
+
+.corp-detail-box-title
+	font-size: 28px
+	font-family: proxima-semibold
+	margin-bottom: 15px
+
+.cor-table
+	display: table
+	max-width: 890px
+	width: 100%
+	border-spacing: 3px
+.cor-table-row
+	display: table-row
+	&:first-child
+		.cor-table-cell
+			background-color: #202e60
+	.cor-table-cell
+		&:first-child
+			text-align: left
+			background-color: #202e60
+.cor-table-cell
+	display: table-cell
+	color: #fff
+	font-size: 23px
+	padding: 20px 35px
+	border-radius: 5px
+	background-color: #2f4792
+	vertical-align: middle
+	text-align: center
+	height: 100%
+.corp-detail-box-small
+	font-size: 16px
+	display: block
+	font-family: proxima-light
+	margin-bottom: 40px
+
+.bonus-list
+	padding: 0
+	margin: 0
+	list-style-type: none
+	display: flex
+	border-bottom: 2px dashed #fff
+	max-width: 1004px
+	width: 100%
+	margin-bottom: 20px
+	li
+		padding-bottom: 20px
+		text-align: center
+		flex-basis: 0;
+		flex-grow: 1;
+		max-width: 100%
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		white-space: nowrap
+		&:after
+			content: ''
+			position: absolute
+			height: 12px
+			width: 12px
+			border-radius: 12px
+			border: 2px solid #fff
+			left: 50%
+			bottom: -7px
+			transform: translateX(-50%)
+
+.question-st
+	display: flex
+	justify-content: flex-end
+.question-b
+	max-width: 790px
+	width: 100%
+	background-color: #fff
+	border-radius: 25px
+	padding: 20px 35px 20px 62px
+	p
+		font-size: 28px
+		color: #1f2d61
+		margin: 0
+		font-family: proxima-bold
+
+.phone-numbers-list
+	padding: 0
+	margin: 0
+	list-style-type: none
+	font-size: 28px
+	font-family: proxima-bold
+
+	a
+		color: #1f2d61
+		font-family: proxima-bold
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+
+//end section 5
+
+//section 6
+.section__6
+
+.section__6bg
+	position: absolute
+	left: -290px
+	right: 0
+	top: -100px
+	bottom: 0
+	background-color: #26e0d0
+	z-index: -1
+	border-radius: 0 0 0 900px
+	overflow: hidden
+	.container
+		position: relative
+		min-height: 100%
+.section__6-title
+	position: absolute
+	top: 50%
+	right: 87%
+	text-transform: uppercase
+	font-size: 161px
+	font-family: gilroy-black
+	line-height: 1
+	color: #8be6de
+	white-space: nowrap
+	transform: rotate(180deg) translateY(50%)
+	writing-mode: vertical-rl;
+.valus-b
+	background-color: #fff
+	border-radius: 25px
+	padding: 45px 40px
+	margin-top: 40px
+	margin-bottom: 40px
+	h1
+		font-size: 23px
+		font-family: proxima-bold
+		margin-bottom: 25px
+	h3
+		text-transform: uppercase
+		margin-bottom: 25px
+		font-size: 23px
+	ul
+		padding: 0
+		margin: 0
+		list-style-type: none
+		font-size: 20px
+		b, strong
+			font-family: proxima-bold
+		li
+			&:before
+				content: ''
+				width: 11px
+				height: 11px
+				border-radius: 11px
+				display: inline-block
+				vertical-align: baseline
+				background-color: #24366e
+				margin-right: 25px
+				position: relative
+				top: -1px
+			&:not(:last-child)
+				margin-bottom: 30px
+
+.vert-slider
+	width: 446px
+.vert-slider-slick-elem
+	position: relative
+	border-radius: 10px
+	display: block
+	border-radius: 10px
+	overflow: hidden
+
+.vert-slider-slick
+	.slick-prev
+		position: absolute
+		z-index: 10
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 36px 28px 36px;
+		border-color: transparent transparent #ffffff transparent;
+		font-size: 0
+		background: none
+		left: 50%
+		transform: translateX(-50%)
+		top: 38px
+		padding: 0
+		cursor: pointer
+	.slick-next
+		position: absolute
+		z-index: 10
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 28px 36px 0 36px;
+		border-color: #ffffff transparent transparent transparent;
+		font-size: 0
+		background: none
+		left: 50%
+		transform: translateX(-50%)
+		bottom: 95px
+		padding: 0
+		cursor: pointer
+	.slick-list
+		padding-top: 95px
+		padding-bottom: 155px
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			height: 95px
+			background-color: #26e0cf
+			opacity: .5
+			z-index: 10
+		&:after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			height: 155px
+			background-color: #26e0cf
+			opacity: .5
+			z-index: 10
+//end section 6
+
+// section 7
+.section__7
+	padding-top: 85px
+.section__7bg
+	position: absolute
+	left: 0
+	right: -200px
+	bottom: 25px
+	top: -240px
+	background-color: #365cc5
+	background-position: top 240px right 200px
+	background-repeat: no-repeat
+	border-radius: 0 0 500px 0
+
+.section__7-inner
+	position: relative
+	z-index: 10
+.section__7-head
+	text-align: center
+	color: #fff
+	padding-bottom: 70px
+	max-width: 525px
+	margin-left: auto
+	margin-right: auto
+	h1
+		font-size: 40px
+		font-family: proxima-bold
+		margin-bottom: 10px
+	p
+		margin: 0
+		font-size: 23px
+		font-family: proxima-light
+
+.prepod-info
+	background-color: #f6f7f9
+	border-radius: 15px
+	padding: 45px 68px 45px 35px
+	max-width: 935px
+	width: 100%
+	position: relative
+	h4
+		text-transform: uppercase
+		font-size: 20px
+		margin-bottom: 15px
+	p
+		font-size: 19px
+		margin-bottom: 20px
+	&:after
+		content: ''
+		position: absolute
+		left: 86%
+		top: 50%
+		transform: translateY(-50%)
+		width: 453px
+		height: 475px
+		background: url(../img/table.png) 0 0 no-repeat
+
+.teacher-table
+	max-width: 1050px
+	width: 100%
+	margin-top: 55px
+	margin-bottom: 55px
+.teacher-table
+	span
+		font-family: proxima-light
+	.cor-table-row
+		.cor-table-cell
+			&:first-child
+				text-align: center
+	.table
+		border-spacing: 3px;
+		width: 100%
+		height: 100%
+		.table-row
+		.table-cell
+			&:first-child
+				width: 70%
+	.table-row
+		height: 100%
+	.table-cell
+		background-color: #2f4792
+		vertical-align: middle
+		font-family: proxima-light
+		font-size: 13.5px
+		height: 100%
+		padding: 15px
+.table
+	display: table
+.table-row
+	display: table-row
+.table-cell
+	display: table-cell
+
+
+.nb-table
+	max-width: 1050px;
+	width: 100%;
+	margin-top: 55px;
+	margin-bottom: 55px;
+	border-spacing: 0
+	tr:first-child
+		&>td
+			background-color: #273a75
+			font-size: 19px;
+			ff
+	&>tbody
+		&>tr:first-child
+			td
+				font-family: proxima-bold
+		&>tr
+			&>td
+				&:first-child
+					font-family: proxima-bold
+					span
+						font-family: proxima-reg
+	tbody
+		&>tr
+			&>td:last-child
+				max-width: 190px
+		td
+			font-size: 13.5px;
+		tr
+			td:first-child
+				background-color: #273a75
+				font-size: 19px;
+		table td
+			background-color: #2f4792 !important
+			font-size: 13.5px !important
+	td
+		background-color: #202e60;
+		display: table-cell;
+		color: #fff;
+		font-size: 19px;
+		padding: 10px 15px;
+		border-radius: 10px;
+		background-color: #2f4792;
+		vertical-align: middle;
+		text-align: center;
+		height: 100%;
+		border: 2px solid #365cc5
+	tbody
+		tr
+			table
+				width: 100%
+				border-spacing: 0
+				height: 100%
+				td
+					background-color: #2f4792;
+					vertical-align: middle;
+					font-family: proxima-light;
+					font-size: 13.5px;
+					height: 100%;
+					padding: 5px 15px;
+				tr
+					td:first-child
+						width: 70%
+
+
+.center-form
+	background-color: #fff !important
+	border-radius: 10px
+	padding: 30px
+	box-shadow: 0 10px 30px rgba(0,0,0, .51)
+	max-width: 940px
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	h4
+		font-size: 22px
+		margin-bottom: 5px
+	h5
+		font-size: 17.5px
+		font-family: proxima-light
+		margin-bottom: 30px
+		span
+			font-size: 22px
+			font-family: proxima-bold
+			color: #fd9c28
+
+	.free-lesson
+		background-color: #fff !important
+		border-radius: 0
+		background: none
+		position: relative
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		padding: 0
+		max-width: none
+		width: auto
+		box-shadow: none
+	.free-lesson [type="submit"], .free-lesson [type="text"], .free-lesson [type="tel"], .free-lesson [type="email"]
+		margin-top: 0
+
+.centF-grid
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+	grid-gap: 15px
+	align-items: center
+
+//end section 7
+
+//section 8
+
+.section__8
+	padding: 100px 0 75px
+	.section-title
+		margin-bottom: 60px
+
+
+.aboutUs-slider
+	padding-left: 70px
+	padding-right: 70px
+	.slick-prev
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 24px
+		height: 19px
+		background: url(../img/arrowl.png) center no-repeat
+		border: 0
+		font-size: 0
+		padding: 0
+		cursor: pointer
+	.slick-next
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 24px
+		height: 19px
+		background: url(../img/arrowr.png) center no-repeat
+		border: 0
+		font-size: 0
+		padding: 0
+		cursor: pointer
+	&:hover
+		.author-aboutUs
+			&::before
+				opacity: .5
+		.author-aboutUs-photo
+			opacity: .3
+		.author-aboutUs-info, .author-aboutUs-say
+			opacity: .5
+
+.aboutUs-slider-elem
+	padding-left: 8px
+	padding-right: 8px
+	&:hover
+		.author-aboutUs
+			color: #fff
+			background-color: #183eb8
+			&::before
+				opacity: 1
+				color: #fb341d
+		.author-aboutUs-photo, .author-aboutUs-info, .author-aboutUs-say
+			opacity: 1
+.author-aboutUs
+	text-align: center
+	background-color: #f6f6f6
+	padding: 35px 33px 60px 33px
+	border-radius: 15px
+	color: #0d1d55
+	position: relative
+	&::before
+		content: '”'
+		position: absolute
+		left: 50%
+		bottom: -17px
+		font-size: 66px
+		line-height: 1
+		color: #183eb8
+		font-family: proxima-reg
+		transform: translateX(-50%)
+.author-aboutUs-photo
+	display: inline-block
+	width: 95px
+	height: 95px
+	vertical-align: top
+	border-radius: 95px
+	margin-bottom: 20px
+	img
+		max-width: none
+		height: 100%
+		width: 100%
+		object-fit: cover
+
+.author-aboutUs-info
+	margin-bottom: 20px
+	.name
+		font-family: proxima-bold
+		font-size: 23px
+	.year
+		font-size: 16.5px
+
+.author-aboutUs-say
+	p
+
+		font-size: 11.5px
+		&:last-child
+			margin-bottom: 0
+//end section 8
+
+//section 9
+.section__9
+	padding: 30px 0 60px
+	background: rgb(30,173,252);
+	background: -moz-linear-gradient(left,  rgba(30,173,252,1) 0%, rgba(21,131,238,1) 100%);
+	background: -webkit-linear-gradient(left,  rgba(30,173,252,1) 0%,rgba(21,131,238,1) 100%);
+	background: linear-gradient(to right,  rgba(30,173,252,1) 0%,rgba(21,131,238,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1eadfc', endColorstr='#1583ee',GradientType=1 );
+
+	.section-title
+		color: #fff
+		font-size: 39px
+		margin-bottom: 25px
+
+.bottom-event
+	h2
+		margin-bottom: 22px
+		color: #ffd246
+		font-size: 26px
+	p
+		font-size: 21px
+
+.bottom-eventio
+	margin-bottom: 40px
+	color: #fff
+.bottom-event-s
+	border: 1px solid #fff
+	border-radius: 10px
+	min-height: 80px
+	padding: 10px 20px
+	font-size: 22px
+	margin-bottom: 43px
+	display: flex
+	align-items: center
+	color: #fff
+	p
+		margin: 0
+		b
+			font-family: proxima-bold
+
+.bottom-event-form
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+	grid-gap: 8px
+	[type="text"],
+	[type="tel"],
+	[type="email"]
+		border: 0
+		background: #fff
+		height: 32px
+		border-radius: 10px
+		padding: 0 10px
+		font-family: proxima-reg
+		font-size: 14.5px
+		width: 100%
+		max-width: 100%
+		min-width: 100%
+		&::placeholder
+			font-family: gilroy-medium
+			color: #777777
+			text-transform: uppercase
+			opacity: 1
+
+	[type="submit"]
+		font-size: 19px
+		font-family: gilroy-extrabold
+		color: #fff
+		background: rgb(253,208,48);
+		background: -moz-linear-gradient(top,  rgba(253,208,48,1) 0%, rgba(253,138,37,1) 100%);
+		background: -webkit-linear-gradient(top,  rgba(253,208,48,1) 0%,rgba(253,138,37,1) 100%);
+		background: linear-gradient(to bottom,  rgba(253,208,48,1) 0%,rgba(253,138,37,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdd030', endColorstr='#fd8a25',GradientType=0 );
+		width: 100%
+		border-radius: 15px
+		height: 33px
+		line-height: 33px
+		box-shadow: 0 8px 10px rgba(255, 149, 1, .3)
+		border: none
+		cursor: pointer
+
+.bottom-event-row
+	margin-left: -50px
+	margin-right: -50px
+	.bottom-event-o
+		padding-left: 50px
+		padding-right: 50px
+		&:first-child
+			.bottom-event
+				position: relative
+				&:after
+					content: ''
+					position: absolute
+					right: -52px
+					top: 26px
+					bottom: 26px
+					width: 3px
+					background-color: #fff
+		
+//end section 9
+//end main
+
+//FOOTER
+.b-footer
+	background-color: #fff
+	padding: 60px 0
+	overflow: hidden
+	position: relative
+	.enr-btn
+		max-width: 272px
+		width: 100%
+		font-size: 24px
+		height: 49px
+		line-height: 49px
+		margin-top: 40px
+.company-info
+	h3
+		font-size: 30px
+		margin-bottom: 20px
+	p
+		font-size: 19.5px
+.company-info-head
+	margin-bottom: 35px
+
+.footer-tel
+	padding: 0
+	margin: 0
+	list-style-type: none
+	padding-left: 55px
+	padding-top: 5px
+	padding-bottom: 5px
+	background: url(../img/phone.png) left center no-repeat
+	font-size: 19.5px
+	margin-bottom: 23px
+	a
+		text-decoration: none
+		color: #0d1d55
+		&:hover
+			text-decoration: none
+
+.inst-s, .fb-s
+	padding: 0
+	margin: 0
+	list-style-type: none
+	padding-left: 78px
+	padding-top: 5px
+	padding-bottom: 5px
+	background: url(../img/inst.png) left center no-repeat
+	font-style: italic
+	font-size: 16px
+	position: relative
+	margin-bottom: 20px
+	&:after
+		content: ':'
+		font-size: 27px
+		position: absolute
+		left: 55px
+		top: 50%
+		font-family: proxima-bold
+		font-style: normal
+		transform: translateY(-50%)
+	li
+		&:not(:last-child)
+			margin-bottom: 3px
+	a
+		
+		color: #0099fb
+
+.fb-s
+	background: url(../img/fb.png) left center no-repeat
+
+#map
+	max-width: 643px
+	height: 510px
+	position: relative
+.ymaps-layers-pane
+    -webkit-filter: grayscale(1)
+    filter: grayscale(1)
+
+.map-pr
+	width: 360px
+	overflow: hidden
+	position: absolute
+	right: -50%
+	top: 50%
+	transform: translate(-50%, -50%)
+	z-index: 10
+	box-shadow: 0 10px 30px rgba(0,0,0, .1)
+	&:after
+		content: ''
+		display: block
+		padding-top: 100%
+//END FOOTER
+
+// NED PAGES STYLES
+
+//modal
+.mfp-bg
+	background: rgba(13, 29, 85, .64)
+.zoom-anim-dialog
+	background: #e5e6e8
+	padding: 35px 50px
+	text-align: left
+	max-width: 760px
+	border-radius: 10px
+	margin: 40px auto
+	position: relative
+
+.method-modal-inner
+	overflow: hidden
+	position: relative
+.left
+	float: left
+	width: 78px
+	margin-right: 35px
+.right
+	overflow: hidden
+	margin-left: 113px
+	h4
+		font-size: 20.5px
+		margin-bottom: 25px
+	p
+		font-size: 18.5px
+
+
+
+.image-source-link
+  color: #98C3D1
+
+.mfp-with-zoom
+  .mfp-container, &.mfp-bg
+    opacity: 0
+    -webkit-backface-visibility: hidden
+    -webkit-transition: all 0.3s ease-out
+    -moz-transition: all 0.3s ease-out
+    -o-transition: all 0.3s ease-out
+    transition: all 0.3s ease-out
+  &.mfp-ready
+    .mfp-container
+      opacity: 1
+    &.mfp-bg
+      opacity: 0.8
+  &.mfp-removing
+    .mfp-container, &.mfp-bg
+      opacity: 0
+//end modal
+@import "media"

@@ -1,0 +1,174 @@
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+input[type="text"],input[type="password"], input[type="email"], input[type="search"] ,input[type="submit"], input[type="reset"], input[type="tel"], textarea
+	border-radius: 0
+	-webkit-appearance: none
+*:focus
+	outline: none
+*
+	 -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+
+.fleft
+	float: left
+.fright
+	float: right
+nav ul, .list
+	margin: 0
+	padding: 0
+	list-style-type: none
+.tac
+	text-align: center
+.tal
+	text-align: left
+.tar
+	text-align: right
+.b-20
+	margin-top: -20px
+.b20
+	margin-top: 20px
+.b-30
+	margin-top: -30px
+.b30
+	margin-top: 30px
+.b-10
+	margin-top: -10px
+.b10
+	margin-top: 10px
+
+::placeholder
+	color: #000
+
+::selection
+	background-color: #000
+	color: #fff
+
+img, svg, iframe
+	max-width: 100%
+	vertical-align: top
+
+h1, h2, h3, h4, h5, h6
+	font-weight: normal
+	margin: 0
+	font-family: proxima-bold
+a
+	&:hover
+		text-decoration: none
+// PX TO EM FUNCTION em(32)
+	$browser-context: 16
+	@function em($pixels, $context: $browser-context)
+		@return #{$pixels/$context}em
+//END
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: normal
+	font-family: proxima-reg
+	overflow-x: hidden
+	background-color: #fff
+	color: #233470
+p
+	margin-top: 0
+
+.b-content
+	overflow: hidden
+	position: relative
+	transform: scale(1)
+.section
+	position: relative
+
+.section__3
+	z-index: 11 !important
+.section__4
+	z-index: 10
+.section__5
+	z-index: 9
+.section__6
+	z-index: 8
+
+
+.my-mfp-zoom-in
+  .zoom-anim-dialog
+    opacity: 0
+    -webkit-transition: all 0.2s ease-in-out
+    -moz-transition: all 0.2s ease-in-out
+    -o-transition: all 0.2s ease-in-out
+    transition: all 0.2s ease-in-out
+    -webkit-transform: scale(0.8)
+    -moz-transform: scale(0.8)
+    -ms-transform: scale(0.8)
+    -o-transform: scale(0.8)
+    transform: scale(0.8)
+  &.mfp-ready .zoom-anim-dialog
+    opacity: 1
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -ms-transform: scale(1)
+    -o-transform: scale(1)
+    transform: scale(1)
+  &.mfp-removing .zoom-anim-dialog
+    -webkit-transform: scale(0.8)
+    -moz-transform: scale(0.8)
+    -ms-transform: scale(0.8)
+    -o-transform: scale(0.8)
+    transform: scale(0.8)
+    opacity: 0
+  &.mfp-bg
+    opacity: 0
+    -webkit-transition: opacity 0.3s ease-out
+    -moz-transition: opacity 0.3s ease-out
+    -o-transition: opacity 0.3s ease-out
+    transition: opacity 0.3s ease-out
+  &.mfp-ready.mfp-bg
+    opacity: 0.8
+  &.mfp-removing.mfp-bg
+    opacity: 0
+
+.my-mfp-slide-bottom
+  .zoom-anim-dialog
+    opacity: 0
+    -webkit-transition: all 0.2s ease-out
+    -moz-transition: all 0.2s ease-out
+    -o-transition: all 0.2s ease-out
+    transition: all 0.2s ease-out
+    -webkit-transform: translateY(-20px) perspective(600px) rotateX(10deg)
+    -moz-transform: translateY(-20px) perspective(600px) rotateX(10deg)
+    -ms-transform: translateY(-20px) perspective(600px) rotateX(10deg)
+    -o-transform: translateY(-20px) perspective(600px) rotateX(10deg)
+    transform: translateY(-20px) perspective(600px) rotateX(10deg)
+  &.mfp-ready .zoom-anim-dialog
+    opacity: 1
+    -webkit-transform: translateY(0) perspective(600px) rotateX(0)
+    -moz-transform: translateY(0) perspective(600px) rotateX(0)
+    -ms-transform: translateY(0) perspective(600px) rotateX(0)
+    -o-transform: translateY(0) perspective(600px) rotateX(0)
+    transform: translateY(0) perspective(600px) rotateX(0)
+  &.mfp-removing .zoom-anim-dialog
+    opacity: 0
+    -webkit-transform: translateY(-10px) perspective(600px) rotateX(10deg)
+    -moz-transform: translateY(-10px) perspective(600px) rotateX(10deg)
+    -ms-transform: translateY(-10px) perspective(600px) rotateX(10deg)
+    -o-transform: translateY(-10px) perspective(600px) rotateX(10deg)
+    transform: translateY(-10px) perspective(600px) rotateX(10deg)
+  &.mfp-bg
+    opacity: 0
+    -webkit-transition: opacity 0.3s ease-out
+    -moz-transition: opacity 0.3s ease-out
+    -o-transition: opacity 0.3s ease-out
+    transition: opacity 0.3s ease-out
+  &.mfp-ready.mfp-bg
+    opacity: 0.8
+  &.mfp-removing.mfp-bg
+    opacity: 0
