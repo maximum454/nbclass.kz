@@ -2,7 +2,7 @@
 <?IncludeTemplateLangFile(__FILE__);?>
 <?
 CModule::IncludeModule("iblock");
-$db_props = CIBlockElement::GetProperty(35, 106, "sort", "asc", array());
+$db_props = CIBlockElement::GetProperty(1, 12, "sort", "asc", array());
 $PROPS = array();
 while($ar_props = $db_props->Fetch()) {
     $PROPS[$ar_props['CODE']] = $ar_props['VALUE'];
@@ -15,10 +15,6 @@ $adres = $PROPS["ADRES"]["TEXT"];
 $insta = $PROPS["INSTA"];
 $time = $PROPS["TIME_WORK"];
 $email = $PROPS["EMAIL"];
-
-$lat = $PROPS["LAT"];
-$lng = $PROPS["LNG"];
-$curPage = $APPLICATION->GetCurPage(false);
 ?>
 <!doctype html>
 <html lang="ru">
@@ -33,8 +29,8 @@ $curPage = $APPLICATION->GetCurPage(false);
 
     <!-- Template Basic Images Start -->
     <meta property="og:image" content="path/to/image.jpg">
-    <link rel="icon" href="img/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?=SITE_TEMPLATE_PATH?>/img/favicon/apple-touch-icon-180x180.png">
     <!-- Template Basic Images End -->
 
     <!-- Custom Browsers Color Start -->
@@ -326,102 +322,90 @@ $curPage = $APPLICATION->GetCurPage(false);
 
         <div class="section section__2" id="section2">
             <div class="container">
-                <h2 class="section-title" data-title="Программы">Программы</h2>
+                <h2 class="section-title" data-title="<?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/section-2-title.php"
+                    )
+                );?>">
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "AREA_FILE_SUFFIX" => "inc",
+                            "EDIT_TEMPLATE" => "",
+                            "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/section-2-title.php"
+                        )
+                    );?>
+                </h2>
                 <div class="row m3">
-                    <div class="col-lg-3 col-md-6 p3">
-                        <a href="#" class="pr-elem">
-                            <div class="pr-elem-inner">
-                                <h4>Английский язык <br> для детей</h4>
-                                <p>5-6 лет “First Friends” <br>
-                                    от 11600 в месяц <br>
-                                    7-9 лет “Family and Friends” <br>
-                                    от 12900 в месяц <br>
-                                </p>
-                                <p>Группы 2-8 человек</p>
-                            </div>
-                            <div class="pr-elem-next"></div>
-                        </a>
+                <?$APPLICATION->IncludeComponent("bitrix:news.list", "programms", Array(
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+                    "ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+                    "AJAX_MODE" => "N",	// Включить режим AJAX
+                    "AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+                    "AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+                    "AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+                    "AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+                    "CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+                    "CACHE_GROUPS" => "Y",	// Учитывать права доступа
+                    "CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+                    "CACHE_TYPE" => "A",	// Тип кеширования
+                    "CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
+                    "DETAIL_URL" => "",	// URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
+                    "DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
+                    "DISPLAY_DATE" => "N",	// Выводить дату элемента
+                    "DISPLAY_NAME" => "Y",	// Выводить название элемента
+                    "DISPLAY_PICTURE" => "N",	// Выводить изображение для анонса
+                    "DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
+                    "DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
+                    "FIELD_CODE" => array(	// Поля
+                        0 => "",
+                        1 => "",
+                    ),
+                    "FILTER_NAME" => "",	// Фильтр
+                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
+                    "IBLOCK_ID" => "3",	// Код информационного блока
+                    "IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
+                    "INCLUDE_SUBSECTIONS" => "Y",	// Показывать элементы подразделов раздела
+                    "MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
+                    "NEWS_COUNT" => "7",	// Количество новостей на странице
+                    "PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
+                    "PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
+                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
+                    "PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
+                    "PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
+                    "PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
+                    "PAGER_TITLE" => "Новости",	// Название категорий
+                    "PARENT_SECTION" => "",	// ID раздела
+                    "PARENT_SECTION_CODE" => "",	// Код раздела
+                    "PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
+                    "PROPERTY_CODE" => array(	// Свойства
+                        0 => "",
+                        1 => "",
+                    ),
+                    "SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
+                    "SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
+                    "SET_META_DESCRIPTION" => "N",	// Устанавливать описание страницы
+                    "SET_META_KEYWORDS" => "N",	// Устанавливать ключевые слова страницы
+                    "SET_STATUS_404" => "N",	// Устанавливать статус 404
+                    "SET_TITLE" => "N",	// Устанавливать заголовок страницы
+                    "SHOW_404" => "N",	// Показ специальной страницы
+                    "SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+                    "SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+                    "SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+                    "SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+                    "STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
+                ),
+                    false
+                );?>
                     </div>
-                    <div class="col-lg-3 col-md-6 p3">
-                        <a href="#" class="pr-elem">
-                            <div class="pr-elem-inner">
-                                <h4>Английский язык <br> для подростков</h4>
-                                <p>10-12 лет “Project” от 13900 <br>
-                                    в месяц <br>
-                                    13-16 лет “Solutions” от 17900<br>
-                                    в месяц</p>
-                                <p>Группы 2-8 человек</p>
-                            </div>
-                            <div class="pr-elem-next"></div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p3">
-                        <a href="#" class="pr-elem">
-                            <div class="pr-elem-inner">
-                                <h4>Английский язык <br> для взрослых</h4>
-                                <p>Уровни Beginner-Advanced <br> от 20300 в месяц</p>
-                                <p>Группы 2-8 человек <br> 16 часов/академический месяц</p>
-                            </div>
-                            <div class="pr-elem-next"></div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p3">
-                        <a href="#" class="pr-elem">
-                            <div class="pr-elem-inner">
-                                <h4>Business English <br> (деловой английский)</h4>
-                                <p>Уровни Elementary-Advanced <br> от 21200 в месяц</p>
-                                <p>Группы 2-8 человек <br> 16 часов/академический месяц</p>
-                            </div>
-                            <div class="pr-elem-next"></div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p3">
-                        <a href="#" class="pr-elem">
-                            <div class="pr-elem-inner">
-                                <h4>Exam Preparation (IELTS, TOEFL, GMAT, SAT)</h4>
-                                <p>Уровни Intermediate-Advanced <br> от 26100 в месяц</p>
-                                <p>Группы 2-8 человек <br> 16 часов/академический месяц</p>
-                            </div>
-                            <div class="pr-elem-next"></div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p3">
-                        <a href="#" class="pr-elem">
-                            <div class="pr-elem-inner">
-                                <h4>Казахский язык</h4>
-                                <p>Детские группы (7-15 лет) <br> от 11600 в месяц</p>
-                                <p>Взрослые группы (от 16 лет) <br> от 16100 в месяц</p>
-                            </div>
-                            <div class="pr-elem-next"></div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p3">
-                        <a href="#" class="pr-elem">
-                            <div class="pr-elem-inner">
-                                <h4>Индивидуальные занятия</h4>
-                                <p>Английский язык 4500/5000 <br>
-                                    - 60 минут <br>
-                                    Казахский язык 3500/4000 <br>
-                                    - 60 минут <br>
-                                    Exam Preparation 5000/5500 <br>
-                                    - 60 минут</p>
-                            </div>
-                            <div class="pr-elem-next"></div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p3">
-                        <div class="pr-discounts">
-                            <h3>Скидки NBclass!</h3>
-                            <ul class="pr-discounts-inner">
-                                <li>Семейная — <b>10% каждому</b></li>
-                                <li>Студенческая — <b>15%</b></li>
-                                <li>Предоплата за 2 <br> и более месяцев — <b>10%</b></li>
-                                <li>Приведи друга –— <b>10%</b></li>
-                                <li>Лучший студент месяца — <b>20%</b></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="section section__3 events-out" id="section3">
@@ -430,17 +414,56 @@ $curPage = $APPLICATION->GetCurPage(false);
                     <div class="col-md">
                         <div class="events">
                             <div class="events-title">
-                                <h3>Акции!</h3>
+                                <h3>
+                                    <?$APPLICATION->IncludeComponent(
+                                        "bitrix:main.include",
+                                        "",
+                                        Array(
+                                            "AREA_FILE_SHOW" => "file",
+                                            "AREA_FILE_SUFFIX" => "inc",
+                                            "EDIT_TEMPLATE" => "",
+                                            "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/events-title-h3.php"
+                                        )
+                                    );?>
+                                </h3>
                             </div>
-                            <h4>Летний английский*</h4>
+                            <h4><?$APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    Array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "inc",
+                                        "EDIT_TEMPLATE" => "",
+                                        "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/events-title-h4.php"
+                                    )
+                                );?>
+                            </h4>
 
                             <ul class="summerEnglish">
-                                <li>Июнь <span>20 900</span> вместо 24 900 тг.</li>
-                                <li>Июль <span>21 900</span> вместо 24 900 тг.</li>
-                                <li>Август <span>22 500</span> вместо 24 900 тг.</li>
+                                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    Array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "inc",
+                                        "EDIT_TEMPLATE" => "",
+                                        "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/summerEnglish.php"
+                                    )
+                                );?>
+
                             </ul>
                             <small class="warning">
-                                * Только для взрослых <br> в групповых занятиях
+                                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    Array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "inc",
+                                        "EDIT_TEMPLATE" => "",
+                                        "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/summerEnglish-warning.php"
+                                    )
+                                );?>
+
                             </small>
                         </div>
                     </div>
@@ -489,18 +512,18 @@ $curPage = $APPLICATION->GetCurPage(false);
                     <div class="col-md-auto">
                         <div class="enroll">
                             <div class="enroll-image bg__cover">
-                                <div class="enroll-image-inner bg__cover" style="background-image: url(img/enroll.jpg);">
+                                <div class="enroll-image-inner bg__cover" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/enroll.jpg);">
                                 </div>
                             </div>
 
-                            <a href="#" class="enr-btn">Записаться</a>
+                            <a href="#enroll" class="enr-btn popup-with-zoom-anim">Записаться</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="section section__5 corp-section" id="section5">
-            <div class="corp-section-bg bg__cover" style="background-image: url(img/banner-021.jpg)"></div>
+            <div class="corp-section-bg bg__cover" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/banner-021.jpg)"></div>
             <div class="container corp-section-inner">
                 <h2 class="section-title">Корпоративное обучение</h2>
 
@@ -558,7 +581,16 @@ $curPage = $APPLICATION->GetCurPage(false);
 
                     <div class="corp-detail-box">
                         <div class="corp-detail-box-title">
-                            Казахский язык
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/corp-detail-box-title-kaz.php"
+                                )
+                            );?>
                         </div>
 
                         <div class="cor-table">
@@ -598,32 +630,77 @@ $curPage = $APPLICATION->GetCurPage(false);
                         </div>
                     </div>
 
-                    <small class="corp-detail-box-small">*стоимость может варьироваться в зависимости от количества проведенных занятий <br>
-                        Трансфер входит в стоимость оплаты</small>
+                    <small class="corp-detail-box-small">
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/corp-detail-box-title.php"
+                            )
+                        );?>
+                    </small>
 
                     <div class="corp-detail-box-bonus">
                         <div class="corp-detail-box-title">
-                            БОНУСЫ
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/corp-detail-box-title.php"
+                                )
+                            );?>
                         </div>
 
                         <ul class="bonus-list">
-                            <li>Быстрое определение <br> уровня (7 минут)</li>
-                            <li>Пробный урок</li>
-                            <li>Разговорные клубы <br> с носителями (1 раз в месяц)</li>
-                            <li>Коуч-сессии <br> по целям</li>
-                            <li>Бесплатный перевод 30 <br> страниц документов</li>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/bonus-list.php"
+                                )
+                            );?>
+
                         </ul>
 
                         <div class="question-st">
                             <div class="question-b">
                                 <div class="row">
                                     <div class="col-md">
-                                        <p>По вопросам корпоративного обучения звонить:</p>
+                                        <p>
+                                            <?$APPLICATION->IncludeComponent(
+                                                "bitrix:main.include",
+                                                "",
+                                                Array(
+                                                    "AREA_FILE_SHOW" => "file",
+                                                    "AREA_FILE_SUFFIX" => "inc",
+                                                    "EDIT_TEMPLATE" => "",
+                                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/question-st__head.php"
+                                                )
+                                            );?>
+                                        </p>
                                     </div>
                                     <div class="col-auto">
                                         <ul class="phone-numbers-list">
-                                            <li><a href="tel:+87756792409">8 775 679 24 09</a></li>
-                                            <li><a href="tel:+87072087183">8 707 208 71 83</a></li>
+                                            <?$APPLICATION->IncludeComponent(
+                                                "bitrix:main.include",
+                                                "",
+                                                Array(
+                                                    "AREA_FILE_SHOW" => "file",
+                                                    "AREA_FILE_SUFFIX" => "inc",
+                                                    "EDIT_TEMPLATE" => "",
+                                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/phone-numbers-list.php"
+                                                )
+                                            );?>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -635,66 +712,144 @@ $curPage = $APPLICATION->GetCurPage(false);
         </div>
         <div class="section section__6" id="section6">
             <div class="section__6bg">
-                <div class="container"><div class="section__6-title">Наши ценности</div></div>
+                <div class="container"><div class="section__6-title">
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/section__6-title.php"
+                            )
+                        );?>
+                    </div></div>
             </div>
             <div class="container">
 
                 <div class="row">
                     <div class="col-xl">
                         <article class="valus-b">
-                            <h1>Наша миссия – помогать расширять горизонты <br> и возможности!</h1>
-                            <h3>Наши ценности</h3>
-                            <ul>
-                                <li><strong>Качество</strong> предоставляемых услуг, как не банально это может прозвучать, для нас на первом месте. К ряду с этим мы уделяем первостепенное внимание <strong>профессионализму</strong> наших преподавателей. Поэтому мы ведем тщательный, трех-ступенчатый отбор при приеме на работу, а также повышение квалификации специалистов каждые шесть месяцев.</li>
-                                <li>Немаловажное значение для нас имеет <strong>душевный комфорт</strong> в школе, на занятиях, в коллективе. Как рабочий, так и учебный процесс идут гораздо эффективнее, если нравится общение, нравятся люди, с которыми находишься, если бежишь на занятия или на работу с удовольствием и в предвкушении положительных эмоций.</li>
-                                <li>Мы также стараемся активно поддерживать <strong>экологичный</strong> образ жизни (Eco-friendly). Мы активно распространяем информацию среди наших коллег и учащихся о том, как можно бережно относиться к ресурсам, а именно к воде, бумаге, электричеству. Выезжая на пикник мы всегда тщательно убираем за собой. В офисе используются только стеклянные и бумажные стаканчики. Копии делаются по минимуму, а использованная бумага собирается и вывозится в пункт сбора макулатуры. Уже стала традицией весенняя посадка деревьев с привлечением работников и учащихся NBclass.</li>
-                                <li>В нашем центре существует также <strong>программа для детей и подростков из малоимущих семей</strong>. Для тех, кто очень хочет и может учиться, но имеют финансовые затруднения, мы с удовольствием предоставляем бесплатное обучение английскому и казахскому языкам.</li>
-                            </ul>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/valus-b.php"
+                                )
+                            );?>
+
                         </article>
                     </div>
                     <div class="col-xl-auto">
-                        <div class="vert-slider popup-gallery">
-                            <div class="vert-slider-slick">
-                                <a href="img/slider01.jpg" class="vert-slider-slick-elem">
-                                    <img src="<?=SITE_TEMPLATE_PATH?>/img/slider01.jpg" alt="">
-
-                                </a>
-                                <a href="img/slider01.jpg" class="vert-slider-slick-elem">
-                                    <img src="<?=SITE_TEMPLATE_PATH?>/img/slider01.jpg" alt="">
-                                </a>
-                                <a href="img/slider01.jpg" class="vert-slider-slick-elem">
-                                    <img src="<?=SITE_TEMPLATE_PATH?>/img/slider01.jpg" alt="">
-                                </a>
-                                <a href="img/slider01.jpg" class="vert-slider-slick-elem">
-                                    <img src="<?=SITE_TEMPLATE_PATH?>/img/slider01.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
+                        <?$APPLICATION->IncludeComponent("bitrix:news.list", "gallery", Array(
+                            "ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+                            "ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+                            "AJAX_MODE" => "N",	// Включить режим AJAX
+                            "AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+                            "AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+                            "AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+                            "AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+                            "CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+                            "CACHE_GROUPS" => "Y",	// Учитывать права доступа
+                            "CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+                            "CACHE_TYPE" => "A",	// Тип кеширования
+                            "CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
+                            "DETAIL_URL" => "",	// URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
+                            "DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
+                            "DISPLAY_DATE" => "Y",	// Выводить дату элемента
+                            "DISPLAY_NAME" => "N",	// Выводить название элемента
+                            "DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
+                            "DISPLAY_PREVIEW_TEXT" => "N",	// Выводить текст анонса
+                            "DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
+                            "FIELD_CODE" => array(	// Поля
+                                0 => "",
+                                1 => "",
+                            ),
+                            "FILTER_NAME" => "",	// Фильтр
+                            "HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
+                            "IBLOCK_ID" => "7",	// Код информационного блока
+                            "IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
+                            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
+                            "INCLUDE_SUBSECTIONS" => "Y",	// Показывать элементы подразделов раздела
+                            "MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
+                            "NEWS_COUNT" => "20",	// Количество новостей на странице
+                            "PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
+                            "PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
+                            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
+                            "PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
+                            "PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
+                            "PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
+                            "PAGER_TITLE" => "Галерея",	// Название категорий
+                            "PARENT_SECTION" => "",	// ID раздела
+                            "PARENT_SECTION_CODE" => "",	// Код раздела
+                            "PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
+                            "PROPERTY_CODE" => array(	// Свойства
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
+                            "SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
+                            "SET_META_DESCRIPTION" => "N",	// Устанавливать описание страницы
+                            "SET_META_KEYWORDS" => "N",	// Устанавливать ключевые слова страницы
+                            "SET_STATUS_404" => "N",	// Устанавливать статус 404
+                            "SET_TITLE" => "N",	// Устанавливать заголовок страницы
+                            "SHOW_404" => "N",	// Показ специальной страницы
+                            "SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+                            "SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+                            "SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+                            "SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+                            "STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
+                        ),
+                            false
+                        );?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="section section__7" id="section7">
-            <div class="section__7bg" style="background-image: url(img/bg7.jpg);"></div>
+            <div class="section__7bg" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/bg7.jpg);"></div>
             <div class="container section__7-inner">
                 <div class="section__7-head">
-                    <h1>ТРЕНИНГ-ЦЕНТР <br> для преподавателей</h1>
-                    <p>При школе NBclass работает тренинг-центр для преподавателей.</p>
+                    <h1>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/section__7-head.php"
+                            )
+                        );?>
+                    </h1>
+                    <p>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/section__7-subhead.php"
+                            )
+                        );?>
+                    </p>
                 </div>
 
                 <div class="prepod-info">
-                    <h4>ЦЕЛЬ</h4>
-                    <p>Поддержание и развитие профессиональных навыков преподавателей английского языка.</p>
-                    <h4>ДЛЯ КОГО</h4>
-                    <p>Преподаватели нашего центра ежемесячно повышают профессиональный уровень. <br>
-                        Для преподавателей других учебных учреждений проходят отдельные тренинги. Они рассчитаны на все уровни обучения учащихся от 6 лет. Специфика варьируется от General English до Business English и Exam  Preparation. Также рассматриваются заявки преподавателей с иной спецификой преподавания.</p>
-                    <h4>ТРЕНЕРЫ</h4>
-                    <p>Тренинги и семинары проводятся местными и приглашенными специалистами. Требования <br>
-                        к тренерам – это практический опыт работы не менее 5 лет, уровень английского языка <br>
-                        не ниже Advanced и профессиональная международная сертификация (CELTA, TESOL, TEFL, IHCYLT, и <br> т.д.)</p>
-                    <h4>ПРЕИМУЩЕСТВА</h4>
-                    <p>Тренинги направлены на развитие практических навыков преподавателей. Наряду
-                        с семинарами преподаватели проводят реальные уроки с реальными учащимися. Ведется постоянный мониторинг со стороны тренеров. Гибкий график тренинга позволяет совмещать интенсивное обучение с работой в группах до 8 человек.</p>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "AREA_FILE_SUFFIX" => "inc",
+                            "EDIT_TEMPLATE" => "",
+                            "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/prepod-info.php"
+                        )
+                    );?>
                 </div>
 
                 <table class="nb-table">
@@ -818,7 +973,18 @@ $curPage = $APPLICATION->GetCurPage(false);
         </div>
         <div class="section section__8" id="section8">
             <div class="container">
-                <h2 class="section-title">ЧТО ГОВОРЯТ О НАС</h2>
+                <h2 class="section-title">
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "AREA_FILE_SUFFIX" => "inc",
+                            "EDIT_TEMPLATE" => "",
+                            "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/section__8-head.php"
+                        )
+                    );?>
+                </h2>
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:news.list",
                     "aboutUs-slider",
@@ -888,64 +1054,79 @@ $curPage = $APPLICATION->GetCurPage(false);
         </div>
         <div class="section section__9">
             <div class="container">
-                <h2 class="section-title">Мероприятия</h2>
+                <h2 class="section-title">
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "AREA_FILE_SUFFIX" => "inc",
+                            "EDIT_TEMPLATE" => "",
+                            "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/section__9-head.php"
+                        )
+                    );?>
+                </h2>
 
-                <?$APPLICATION->IncludeComponent(
-                    "bitrix:news.list",
-                    "",
-                    Array(
-                        "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                        "ADD_SECTIONS_CHAIN" => "N",
-                        "AJAX_MODE" => "N",
-                        "AJAX_OPTION_ADDITIONAL" => "",
-                        "AJAX_OPTION_HISTORY" => "N",
-                        "AJAX_OPTION_JUMP" => "N",
-                        "AJAX_OPTION_STYLE" => "Y",
-                        "CACHE_FILTER" => "N",
-                        "CACHE_GROUPS" => "Y",
-                        "CACHE_TIME" => "36000000",
-                        "CACHE_TYPE" => "A",
-                        "CHECK_DATES" => "Y",
-                        "DETAIL_URL" => "",
-                        "DISPLAY_BOTTOM_PAGER" => "N",
-                        "DISPLAY_DATE" => "N",
-                        "DISPLAY_NAME" => "Y",
-                        "DISPLAY_PICTURE" => "Y",
-                        "DISPLAY_PREVIEW_TEXT" => "Y",
-                        "DISPLAY_TOP_PAGER" => "N",
-                        "FIELD_CODE" => array("", ""),
-                        "FILTER_NAME" => "",
-                        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                        "IBLOCK_ID" => "6",
-                        "IBLOCK_TYPE" => "content",
-                        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                        "INCLUDE_SUBSECTIONS" => "Y",
-                        "MESSAGE_404" => "",
-                        "NEWS_COUNT" => "2",
-                        "PAGER_BASE_LINK_ENABLE" => "N",
-                        "PAGER_DESC_NUMBERING" => "N",
-                        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                        "PAGER_SHOW_ALL" => "N",
-                        "PAGER_SHOW_ALWAYS" => "N",
-                        "PAGER_TEMPLATE" => ".default",
-                        "PAGER_TITLE" => "Мероприятия",
-                        "PARENT_SECTION" => "",
-                        "PARENT_SECTION_CODE" => "",
-                        "PREVIEW_TRUNCATE_LEN" => "",
-                        "PROPERTY_CODE" => array("", ""),
-                        "SET_BROWSER_TITLE" => "N",
-                        "SET_LAST_MODIFIED" => "N",
-                        "SET_META_DESCRIPTION" => "Y",
-                        "SET_META_KEYWORDS" => "N",
-                        "SET_STATUS_404" => "N",
-                        "SET_TITLE" => "N",
-                        "SHOW_404" => "N",
-                        "SORT_BY1" => "ACTIVE_FROM",
-                        "SORT_BY2" => "SORT",
-                        "SORT_ORDER1" => "DESC",
-                        "SORT_ORDER2" => "ASC",
-                        "STRICT_SECTION_CHECK" => "N"
-                    )
+                <?$APPLICATION->IncludeComponent("bitrix:news.list", "bottom-event", Array(
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+                    "ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+                    "AJAX_MODE" => "N",	// Включить режим AJAX
+                    "AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+                    "AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+                    "AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+                    "AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+                    "CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+                    "CACHE_GROUPS" => "Y",	// Учитывать права доступа
+                    "CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+                    "CACHE_TYPE" => "A",	// Тип кеширования
+                    "CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
+                    "DETAIL_URL" => "",	// URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
+                    "DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
+                    "DISPLAY_DATE" => "N",	// Выводить дату элемента
+                    "DISPLAY_NAME" => "Y",	// Выводить название элемента
+                    "DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
+                    "DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
+                    "DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
+                    "FIELD_CODE" => array(	// Поля
+                        0 => "",
+                        1 => "",
+                    ),
+                    "FILTER_NAME" => "",	// Фильтр
+                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
+                    "IBLOCK_ID" => "6",	// Код информационного блока
+                    "IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
+                    "INCLUDE_SUBSECTIONS" => "Y",	// Показывать элементы подразделов раздела
+                    "MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
+                    "NEWS_COUNT" => "2",	// Количество новостей на странице
+                    "PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
+                    "PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
+                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
+                    "PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
+                    "PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
+                    "PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
+                    "PAGER_TITLE" => "Мероприятия",	// Название категорий
+                    "PARENT_SECTION" => "",	// ID раздела
+                    "PARENT_SECTION_CODE" => "",	// Код раздела
+                    "PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
+                    "PROPERTY_CODE" => array(	// Свойства
+                        0 => "",
+                        1 => "",
+                    ),
+                    "SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
+                    "SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
+                    "SET_META_DESCRIPTION" => "Y",	// Устанавливать описание страницы
+                    "SET_META_KEYWORDS" => "N",	// Устанавливать ключевые слова страницы
+                    "SET_STATUS_404" => "N",	// Устанавливать статус 404
+                    "SET_TITLE" => "N",	// Устанавливать заголовок страницы
+                    "SHOW_404" => "N",	// Показ специальной страницы
+                    "SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+                    "SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+                    "SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+                    "SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+                    "STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
+                ),
+                    false
                 );?>
             </div>
         </div>
@@ -956,31 +1137,78 @@ $curPage = $APPLICATION->GetCurPage(false);
                 <div class="col-lg-4">
                     <div class="company-info">
                         <div class="company-info-head">
-                            <h3>Где мы находимся</h3>
-                            <p>г. Алматы, ул Маркова 11 <br> уг. Бухар Жырау</p>
+                            <h3>
+                                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    Array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "inc",
+                                        "EDIT_TEMPLATE" => "",
+                                        "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/company-info-h3.php"
+                                    )
+                                );?>
+                            </h3>
+                            <p>
+                                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    Array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "inc",
+                                        "EDIT_TEMPLATE" => "",
+                                        "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/company-info-txt.php"
+                                    )
+                                );?></p>
                         </div>
 
                         <ul class="footer-tel">
-                            <li><a href="tel:+87071061719">8 (707) 106 17 19</a></li>
-                            <li><a href="tel:+87272926332">8 (727) 292 63 32</a></li>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/footer-tel.php"
+                                )
+                            );?>
                         </ul>
 
                         <ul class="inst-s">
-                            <li><a href="#">@nbclass_kz</a></li>
-                            <li><a href="#">@nbclass_almaty</a></li>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/inst-s.php"
+                                )
+                            );?>
+
                         </ul>
 
                         <ul class="fb-s">
-                            <li><a href="#">@NBclass English</a></li>
-                            <li><a href="#">@NB Class</a></li>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/bitrix/templates/".SITE_TEMPLATE_ID."/include/fb-s.php"
+                                )
+                            );?>
+
                         </ul>
 
-                        <a href="#" class="enr-btn">Оставить завявку</a>
+                        <a href="#enroll" class="enr-btn popup-with-zoom-anim">Оставить завявку</a>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div id="map">
-                        <div class="map-pr bg__cover" style="background-image: url(img/lc.jpg)">
+                        <div class="map-pr bg__cover" style="background-image: url(<?=CFile::GetPath($PROPS['OFFICE_PHOTO'])?>)">
                         </div>
                     </div>
 
@@ -1006,35 +1234,21 @@ $curPage = $APPLICATION->GetCurPage(false);
 ),
     false
 );?>
+<div id="enroll" class="zoom-anim-dialog mfp-hide">
+    <div class="modal-form">
+        <form action="#">
+            <h4>Записаться!</h4>
+
+            <input type="text" placeholder="имя">
+            <input type="tel" placeholder="телефон">
+            <input type="email" placeholder="e-mail">
+
+            <input type="submit" value="Записаться">
+        </form>
+    </div>
+</div>
 <?$APPLICATION->AddHeadScript("/bitrix/templates/".SITE_TEMPLATE_ID."/js/scripts.min.js");?>
 <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-<script>
-    var myMap;
-    ymaps.ready(function () {
-        var myMap = new ymaps.Map('map', {
-                center: [<?=$PROPS['LNG']?>,<?=$PROPS['LAT']?>],
-                zoom: 16
-            }, {
-                searchControlProvider: 'yandex#search'
-            }),
-            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                hintContent: 'Собственный значок метки',
-                balloonContent: '<?=$PROPS['ADDRESS'][TEXT];?>'
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#image',
-                // Своё изображение иконки метки.
-                //iconImageHref: '<?=CFile::GetPath($PROPS['MAP_LOGO'])?>',
-                // Размеры метки.
-                //iconImageSize: [35, 35],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                //iconImageOffset: [-10, -15]
-            });
-        myMap.geoObjects.add(myPlacemark);
-    });
-</script>
 <script>
     ymaps.ready(init);
 
@@ -1043,7 +1257,7 @@ $curPage = $APPLICATION->GetCurPage(false);
         var myMap;
 
         myMap = new ymaps.Map("map", {
-            center: [43.233124, 76.926008],
+            center: [<?=$PROPS['LNG']?>, <?=$PROPS['LAT']?>],
             zoom: 16,
             controls: []
         });
@@ -1054,9 +1268,9 @@ $curPage = $APPLICATION->GetCurPage(false);
             position: {top: 15, left: 15}
         });
 
-        var myPlacemark = new ymaps.Placemark([43.233124, 76.926008] , {},
+        var myPlacemark = new ymaps.Placemark([<?=$PROPS['LNG']?>, <?=$PROPS['LAT']?>] , {},
             { iconLayout: 'default#image',
-                iconImageHref: 'img/mark.png',
+                iconImageHref: '<?=CFile::GetPath($PROPS['MAP_LOGO'])?>',
                 iconImageSize: [69, 112],
                 iconImageOffset: [-20, -47] });
 

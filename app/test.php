@@ -12,30 +12,24 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="row bottom-event-row b-30">
-
+<div class="row m3">
     <?foreach($arResult["ITEMS"] as $arItem):?>
         <?
         $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
         $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
         ?>
-        <div class="col-md-6 bottom-event-o b30" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-            <article class="bottom-event">
-                <div class="bottom-eventio">
-                    <h2><?echo $arItem["NAME"]?></h2>
+        <div class="col-lg-3 col-md-6 p3" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+            <a href="#enroll" class="pr-elem popup-with-zoom-anim">
+                <div class="pr-elem-inner">
+                    <h4><?echo $arItem["NAME"]?></h4>
                     <?echo $arItem["PREVIEW_TEXT"];?>
                 </div>
-
-                <div class="bottom-event-s">
-                    <?echo $arItem["DETAIL_TEXT"];?>
-                </div>
-
-                <div class="bottom-event-form">
-                    <input type="text" placeholder="Имя">
-                    <input type="tel" placeholder="Телефон">
-                    <input type="submit" value="Регистрация">
-                </div>
-            </article>
+                <div class="pr-elem-next"></div>
+            </a>
         </div>
+
     <?endforeach;?>
 </div>
+
+
+
