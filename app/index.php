@@ -53,11 +53,11 @@ $email = $PROPS["EMAIL"];
                 <ul class="navigation__list">
                     <li><a href="#" class="scrollto" data-attr-scroll="section1">методика</a></li>
                     <li><a href="#" class="scrollto" data-attr-scroll="section2">программы</a></li>
-                    <li><a href="#" class="scrollto" data-attr-scroll="section6">миссия</a></li>
-                    <li><a href="#" class="scrollto" data-attr-scroll="section5">корпоративное обучение</a></li>
-                    <li><a href="#" class="scrollto" data-attr-scroll="section4">онлайн</a></li>
-                    <li><a href="#" class="scrollto" data-attr-scroll="section7">тренинг-центр</a></li>
                     <li><a href="#" class="scrollto" data-attr-scroll="section3">Акции</a></li>
+                    <li><a href="#" class="scrollto" data-attr-scroll="section4">онлайн</a></li>
+                    <li><a href="#" class="scrollto" data-attr-scroll="section5">корпоративное обучение</a></li>
+                    <li><a href="#" class="scrollto" data-attr-scroll="section6">миссия</a></li>
+                    <li><a href="#" class="scrollto" data-attr-scroll="section7">тренинг-центр</a></li>
                     <li><a href="#" class="scrollto" data-attr-scroll="section8">отзывы</a></li>
                     <li><a href="#" class="scrollto" data-attr-scroll="section9">Контакты</a></li>
                 </ul>
@@ -65,7 +65,7 @@ $email = $PROPS["EMAIL"];
         </div>
     </header>
     <main class="b-content">
-        <div class="section section__1" id="section1">
+        <div class="section section__1" >
             <div class="section__1-top">
                 <div class="container">
                     <div class="row align-items-end">
@@ -145,7 +145,7 @@ $email = $PROPS["EMAIL"];
                                 </div>
                             </div>
 
-                            <a href="#test" class="test-btn popup-with-zoom-anim">Пройти тест</a>
+                            <a href="#test" class="test-btn popup-with-zoom-anim">Узнать свой уровень</a>
                             <div id="test" class="zoom-anim-dialog mfp-hide">
                                 <div class="method-modal-inner">
                                     <h1>Проходим тест</h1>
@@ -320,7 +320,7 @@ $email = $PROPS["EMAIL"];
 
                     <div class="row">
                         <div class="col-lg">
-                            <div class="about-left">
+                            <div class="about-left" id="section1">
                                 <div class="pr-title">
                                     <span>Методика</span> преподавания <br>центра
                                 </div>
