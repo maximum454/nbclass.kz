@@ -957,6 +957,31 @@ $email = $PROPS["EMAIL"];
                 </section>
             </div>
         </div>
+        <div class="section recomendation-section">
+            <div class="recomendation-section-bg"></div>
+            <div class="container">
+                <h2>Рекомедательные письма</h2>
+
+                <div class="recomend-slide popup-gallery-rec">
+                    <div class="recomend-slide-elem">
+                        <a href="img/mail01.jpg" class="recomend-slide-elem-inner bg__cover" style="background-image: url(img/rec01.jpg)"></a>
+                    </div>
+                    <div class="recomend-slide-elem">
+                        <a href="img/mail01.jpg" class="recomend-slide-elem-inner bg__cover" style="background-image: url(img/rec01.jpg)"></a>
+                    </div>
+                    <div class="recomend-slide-elem">
+                        <a href="img/mail01.jpg" class="recomend-slide-elem-inner bg__cover" style="background-image: url(img/rec01.jpg)"></a>
+                    </div>
+                    <div class="recomend-slide-elem">
+                        <a href="img/mail01.jpg" class="recomend-slide-elem-inner bg__cover" style="background-image: url(img/rec01.jpg)"></a>
+                    </div>
+
+                    <div class="recomend-slide-elem">
+                        <a href="img/mail01.jpg" class="recomend-slide-elem-inner bg__cover" style="background-image: url(img/rec01.jpg)"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="section section__6" id="section6">
             <div class="section__6bg">
                 <div class="container"><div class="section__6-title">

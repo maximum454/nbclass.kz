@@ -9,6 +9,7 @@
 .hamburger
 	padding-top: 0
 	padding-bottom: 0
+	padding-left: 0
 
 .mb-menu
 	position: fixed
@@ -1663,4 +1664,95 @@ html.is-active
 
 .nb-table-out
 	overflow-x: auto
+
+
+//RECOMEND
+.recomendation-section
+	padding: 115px 0
+	position: relative
+	z-index: 8
+	h2
+		font-size: 40px
+		color: #3359c8
+		font-family: proxima-bold
+		margin-bottom: 65px
+		text-align: center
+	.container
+		position: relative
+		z-index: 10
+.recomendation-section-bg
+	position: absolute;
+	top: -250px;
+	left: -172px;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	background-position: bottom center;
+	-webkit-border-radius: 0 0 0 400px;
+	border-radius: 0 0 0 400px;
+	z-index: -1;
+.recomend-slide-elem
+	padding-left: 5px
+	padding-right: 5px
+.recomend-slide
+	padding: 0 74px
+.recomend-slide-elem-inner
+	border-radius: 10px
+	overflow: hidden
+	background-position: top center
+	position: relative
+	display: block
+	&:after
+		content: ''
+		display: block
+		padding-top: 120%
+		background-color: rgba(39, 79, 158, .15)
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		background: url(../img/plus.png) center no-repeat
+		z-index: 10
+
+
+.recomend-slide
+	padding-left: 70px
+	padding-right: 70px
+	.slick-prev
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 24px
+		height: 19px
+		background: url(../img/arrowl.png) center no-repeat
+		border: 0
+		font-size: 0
+		padding: 0
+		cursor: pointer
+	.slick-next
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 24px
+		height: 19px
+		background: url(../img/arrowr.png) center no-repeat
+		border: 0
+		font-size: 0
+		padding: 0
+		z-index: 100
+		cursor: pointer
+.popup-gallery-rec-out
+	figure
+		border-radius: 10px
+		overflow: hidden
+		figcaption
+			display: none
+	.mfp-img
+		padding: 0
+//END RECOMEND
 @import "media"
