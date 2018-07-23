@@ -1,140 +1,48 @@
-<table class="nb-table">
-    <tbody>
-    <tr>
-        <td>
-            Тема
-        </td>
-        <td class="cor-table-cell">
-            Содержание/количество <br>
-            часов
-        </td>
-        <td class="cor-table-cell">
-            Стоимость
-        </td>
-        <td class="cor-table-cell">
-            Комментарии
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Teaching English to Adults <br>
-            (до 6 человек)
-        </td>
-        <td>
-            <table>
-                <tbody>
-                <tr>
-                    <td>
-                        Тренинг
-                    </td>
-                    <td>
-                        16 ч.
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        практика: подготовка, проведение, анализ занятий
-                    </td>
-                    <td>
-                        4 ч.
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        самостоятельное изучение
-                    </td>
-                    <td>
-                        6 ч.
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-        <td>
-            от 51 000 тг. <br>
-            до 60 000 тг.
-        </td>
-        <td>
-            Для преподавателей с опытом работы от 1 года и уровнем от Upper-Intermediate.
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Teaching IELTS <br>
-            (до 8 человек)
-        </td>
-        <td>
-            <table>
-                <tbody>
-                <tr>
-                    <td>
-                        Тренинг
-                    </td>
-                    <td>
-                        10 ч.
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Экзамен
-                    </td>
-                    <td>
-                        3.5 ч.
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-        <td>
-            от 36 000 тг. <br>
-            до 43 000 тг.
-        </td>
-        <td>
-            Рекомендуется преподавателям уровня Advanced и выше, работающими с взрослыми группами уровней Intermediate и выше.
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Teaching Young Learners <br>
-            (до 6 человек)
-        </td>
-        <td>
-            <table>
-                <tbody>
-                <tr>
-                    <td>
-                        Тренинг
-                    </td>
-                    <td>
-                        16 ч.
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        практика: подготовка, проведение, анализ занятий
-                    </td>
-                    <td>
-                        4 ч.
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        самостоятельное изучение
-                    </td>
-                    <td>
-                        6 ч.
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-        <td>
-            от 41 000 тг. <br>
-            до 48 000 тг.
-        </td>
-        <td>
-            Для преподавателей уровня Intermediate и&nbsp;выше, работающие с&nbsp;детьми и&nbsp;подростками.
-        </td>
-    </tr>
-    </tbody>
-</table>
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+/** @var array $arParams */
+/** @var array $arResult */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+/** @global CDatabase $DB */
+/** @var CBitrixComponentTemplate $this */
+/** @var string $templateName */
+/** @var string $templateFile */
+/** @var string $templateFolder */
+/** @var string $componentPath */
+/** @var CBitrixComponent $component */
+$this->setFrameMode(true);
+?>
+<div class="aboutUs-slider">
+    <? foreach ($arResult["ITEMS"] as $arItem): ?>
+        <?
+        $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+        $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+        ?>
+        <div class="aboutUs-slider-elem" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+            <div class="author-aboutUs">
+                <? if (!empty($arItem["PREVIEW_PICTURE"]["SRC"])): ?>
+                <div class="author-aboutUs-photo">
+                    <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>"
+                         width="<?= $arItem["PREVIEW_PICTURE"]["WIDTH"] ?>"
+                         height="<?= $arItem["PREVIEW_PICTURE"]["HEIGHT"] ?>"
+                         alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
+                         title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>">
+                </div>
+                <? endif; ?>
+                <div class="author-aboutUs-info">
+                    <div class="name"><? echo $arItem["NAME"] ?></div>
+                    <div class="year"><? echo $arItem["DISPLAY_PROPERTIES"]["AGE"]["VALUE"] ?></div>
+                </div>
+                <div class="author-aboutUs-say">
+                    <? if (!empty($arItem["DISPLAY_PROPERTIES"]["YOUTUBE"]["VALUE"])): ?>
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?=$arItem["DISPLAY_PROPERTIES"]["YOUTUBE"]["VALUE"]?>" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <? else: ?>
+                        <? echo $arItem["PREVIEW_TEXT"]; ?>
+                    <? endif; ?>
+                </div>
+            </div>
+        </div>
+    <? endforeach; ?>
+</div>
