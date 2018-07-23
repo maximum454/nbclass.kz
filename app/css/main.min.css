@@ -5793,14 +5793,15 @@ html.is-active body .mb-menu {
   .prepod-info:after {
     content: '';
     position: absolute;
-    left: 86%;
-    top: 50%;
+    left: 73%;
+    top: 12%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    width: 453px;
-    height: 475px;
-    background: url(../img/table.png) 0 0 no-repeat; }
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    background: url(../img/table.png) 0 0 no-repeat;
+    display: block; }
 
 .teacher-table {
   max-width: 1050px;
@@ -6560,7 +6561,9 @@ html.is-active body .mb-menu {
   .section-title {
     margin-bottom: 40px; }
   .bottom-event-row .bottom-event-o:first-child .bottom-event:after {
-    content: none; } }
+    content: none; }
+  .prepod-info:after {
+    display: none; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 576px) {
