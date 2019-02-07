@@ -5223,7 +5223,7 @@ html.is-active body .mb-menu {
     font-family: proxima-bold; }
 
 .events-out {
-  background-color: #d43538;
+  background-color: #26e0d0;
   color: #fff;
   position: relative;
   z-index: 10; }
@@ -5256,7 +5256,7 @@ html.is-active body .mb-menu {
     width: 50vw; }
   .events-title h3 {
     text-transform: uppercase;
-    color: #d43538;
+    color: #26e0d0;
     font-size: 36px;
     font-family: gilroy-bold;
     padding-right: 50px; }
