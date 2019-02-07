@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html><head>
+<meta content="text/html; charset=windows-1251" http-equiv="Content-Type">
+<title>NBclass</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="static/css/main.css" rel="stylesheet" type="text/css">
+<link href="static/images/fav.ico" rel="shortcut icon" type="image/x-icon">
+<link href="static/css/jquery.fancybox.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+<a name="home" class="anchor"></a>
+
+<div class="head head-top">
+				<div class="fix">
+                                    
+    <img src="static/images/nbclasslogo.png" class="logo">
+            
+	<ul class="menu">
+	<li><a href="#child">Для детей и подростков</a></li>
+<!-- 	<li><a href="#exams">Подготовка к экзаменам</a></li> -->
+	<li><a href="#big">Для взрослых</a></li>
+	<li><a href="#order">Заявка</a></li>
+	</ul>
+        
+	<ul class="lang">
+	<li class="kz"><a href=""> </a></li>
+	<li class="ru"><a href=""></a></li>
+	<li class="en"><a href=""></a></li>
+    </ul>
+        
+    <div class="head1">Языковой центр Казахстан, г. Алматы</div>
+        
+	<ul class="social">
+	<li class="s-vk"><a href=""> </a></li>
+	<li class="s-fb"><a href=""></a></li>
+	<li class="s-mr"><a href=""></a></li>
+    </ul>
+        
+    <a href="#contacts" class="head2">Контакты</a>
+        
+	<ul class="head3">
+	<li><img src="static/images/h-mob.png"><a href="tel:+77015439636">8 (701) 543 96 36</a></li>
+	<li><img src="static/images/h-tel.png"><a href="tel:+77052087183">8 (705) 208 71 83</a></li>
+	<li><img src="static/images/h-skype.png">infonbclass</li>
+    <li><img src="static/images/h-mail.png"><a href="mailto:info@nbclass.kz">info@nbclass.kz</a></li>
+    </ul>
+                                </div>
+</div>
+
+
+
+<div id="back-top">
+<div class="head head-fly">
+				<div class="fix">
+    <a href="#home"><img src="static/images/nbclasslogo11.png" class="logo"></a>
+	<ul class="menu">
+	<li><a href="#child">Для детей и подростков</a></li>
+	<li><a href="#exams">Подготовка к экзаменам</a></li>
+	<li><a href="#big">Для взрослых</a></li>
+	<li><a href="#order">Заявка</a></li>
+	</ul>
+	<a href="#contacts" class="head2">Контакты</a>
+                                </div>
+</div>
+</div>
+    
+    
+
+
+
+<!-- <div class="about">
+				<div class="fix">
+<div class="about-1">NB class - независисый центр английского языка</div>
+<!-- <div class="about-2">Приглашаем к сотрудничеству </div> -->
+<!-- <center><a class="about-3 fancybox" href="#inline1">О нашем центре</a></center>
+                                </div>
+</div> -->
+<!-- слайдер -->
+<div class="slider">
+<div style="margin: 0 auto; max-width:1263px; min-width:800px; max-height:339px; min-height:253px">
+
+	<ul>
+		<li><img src="static/images/slide2.png" alt=""></li>
+		<li><img src="static/images/slide1.png" alt=""></li>
+		<li><img src="static/images/slide3.png" alt=""></li>
+		<li><img src="static/images/slide4.png" alt=""></li>
+
+	</ul>
+</div>   
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+ $(".slider").each(function () { // обрабатываем каждый слайдер
+  var obj = $(this);
+  $(obj).append("<div class='nav'></div>");
+  $(obj).find("li").each(function () {
+   $(obj).find(".nav").append("<span rel='"+$(this).index()+"'></span>"); // добавляем блок навигации
+   $(this).addClass("slider"+$(this).index());
+  });
+  $(obj).find("span").first().addClass("on"); // делаем активным первый элемент меню
+ });
+});
+function sliderJS (obj, sl) { // slider function
+ var ul = $(sl).find("ul"); // находим блок
+ var bl = $(sl).find("li.slider"+obj); // находим любой из элементов блока
+ var step = $(bl).width(); // ширина объекта
+ $(ul).animate({marginLeft: "-"+step*obj}, 500); // 500 это скорость перемотки
+}
+$(document).on("click", ".slider .nav span", function() { // slider click navigate
+ var sl = $(this).closest(".slider"); // находим, в каком блоке был клик
+ $(sl).find("span").removeClass("on"); // убираем активный элемент
+ $(this).addClass("on"); // делаем активным текущий
+ var obj = $(this).attr("rel"); // узнаем его номер
+ sliderJS(obj, sl); // слайдим
+ return false;
+});
+</script>
+
+<!-- слайдер -->
+<div id="inline1">
+<b class="inline-title">О нашем центре</b>
+<br><br>
+Независимо от Вашего уровня, возраста или амбиций, мы можем помочь Вам улучшить свой английский, который стал необходимостью в наши дни.
+<br><br>
+• Ваш преподаватель поможет Вам определить свои цели, подобрать подходящую для Вас прграмму, будет следить за Вашими успехами.
+<br><br>
+• На центр стремится удовлетворить индивидуальные потребности абсолютно каждого студента.
+<br><br>
+• Обучение английскому языку, в основе которого лежит уникальная методика (communicativapproach), ведется только на английском языке.
+<br><br>
+• Квалифицированные преподаватели с опытом работы, ежегодно повышающие квалификации.
+</div>
+<br>
+<div class="fix">
+<div class="quote">
+Если ты говоришь с человеком на том языке, который он понимает, ты говоришь с его головой. Если ты говоришь с человеком на его родном языке, ты говоришь с его сердцем.
+(Нельсон Мандела)
+</div>
+
+ <div class="fix">
+<div class="for"><a name="exams" class="anchor"></a>
+<img src="static/images/a5.png" class="for2">
+<h1>Языковой центр NBclass объявляет набор в группы по обучению английскому языку:</h1>
+
+<ul class="for4">
+
+<li><!-- <img src="static/images/f1.png"> --><b>Уровень Upper-Intermediate u Interdemiate</b>
+Подробное описание(можно сделать выплывашки)</li>
+
+<li><!-- <img src="static/images/f2.png"> --><b>Уровень Pre-Intermediate</b>
+Подробное описание(можно сделать выплывашки)</li>
+
+<li><!-- <img src="static/images/f3.png"> --><b>Уровень Elementary</b>
+Подробное описание (можно сделать выплывашки)</li>
+
+<li><!-- <img src="static/images/f4.png"> --><b>Подготовка к IELTS</b>
+Подробное описание (можно сделать выплывашки)</li>
+
+<li><!-- <img src="static/images/f5.png"> --><b>Детские группы</b>
+Подробное описание (можно сделать выплывашки)</li>
+
+</ul>
+
+<div class="clear"></div>
+<hr>
+<div><a name="big" class="anchor"></a></div>
+<img border="0" src="static/images/a6.png" class="for3">
+<div class="about-5">У Вас есть прекрасная возможность начать обучение со <b>СКИДКОЙ!</b></div>
+<div class="about-6">Языковой центр NBclass предлагает Вам пройти бесплатный тест на определение уровня английского языка!</div>
+
+<ul class="for1">
+<li>Запишитесь на курс до 01 октября включительно и получите скидку 30% на первый месяц обучения - <b>12 600 тг.</b>
+<li>Для Вашего удобства пройдите письменный тест на нашем сайте и запишитесь на устное собеседование по Skype.</li>
+<li>Для этого пожалуйста перейдите по <a href="https://docs.google.com/forms/d/1ZbpR67e7MM85vF61G3ZLIJqNgO7R1wyIr432jfYMobA/viewform?usp=send_form" target="_blank">ссылке.</a></li>
+
+</ul>
+
+</div>
+                                </div>
+                                
+								
+								
+								
+								<div class="fix">
+
+
+
+
+<div class="clear"></div>
+
+</div>
+                                </div>
+                               
+                               
+                               
+                               
+                                
+<div class="order"><a name="order" class="anchor"></a>
+				<div class="fix">
+<div class="order-1">Оставьте заявку сейчас</div>
+<div class="order-2">и узнайте как записаться к нам на обучение</div>
+
+<input type=text value="Имя">
+<input type=text value="Телефон">
+<input type=text value="Эл. почта">
+<br><br>
+<input type=button value="ОТПРАВИТЬ">
+                                </div>
+</div>
+
+
+<div class="fix">
+<br><br>
+<div class="about3">
+<div class="about-title"><span>Программы обучения</span>
+
+<b>Программы для детей и подростков, для взрослых,<br> подготовка к экзаменам а так же корпоративный английский</b></div>
+
+
+<div class="tea2-read">
+<b></b> . 
+<br><br>
+
+<!-- <a  href="#inline3" class="fancybox">Читать подробнее</a> -->
+
+<div id="inline3">
+<b class="inline-title">Программа</b>
+<br><br>
+К
+</div>
+
+</div>
+
+<a class="about-all tea2-all fancybox" href="#inline-2all"></a>
+
+<img src="static/images/educ.png" class="tea2">
+</div>
+</div>
+ <!--  -->
+ 
+  <div class="fix">
+<a name="production" class="anchor"></a>
+<div class="about2">
+<div class="about-title"><span>Программы для детей  и подростков</span>
+<b>Повышение успеваемости в школе<br>Подготовка к экзаменам (выпускные экзамены, ЕНТ, IELTS, TOEFL и др.)<br>
+Развитие разговорной речи<br>
+?	Работа над отдельными навыками: граматика, произношение, письмо и т.д.
+</b></div>
+
+<br>
+<a class="about-all tea1-all fancybox" href="#inline-1all"></a>
+<div id="inline2">
+<b class="inline-title">Программа для детей и подростков</b>
+<br><br>
+Very young learners (6-7 лет)
+<br>Использование игровой методики с учетом нюансов возраста- особенностей мышления, внимания, памяти. Ваш ребенок е будет скучать, он с головой окунется в процесс освоения иной языковой реальности. Преподаватели совместят процесс обучения с игрой, пением и творчеством. Дети быстро и незаметно для себя осваивают новый алфавит, учат целый ряд новых слов и овладевают разговорными фразами.
+<br><br>
+Young learners (8-12 лет)
+<br>Цель данного курса- развивать и тренированить понимание английской речи, с применением множества игр, соревнований, песен, и также создания проектов на изучаемом языке. Дети учатся писать слова, предложения, а затем и мини сочинения по английски. В результате дети лучше справляются со школьной программой и достигают значительных успехов в обучении английскому.
+<br><br>
+Teenagers (13-16 лет)
+<br>Мы знаем, что непросто удержать внимание и сохранить мотивацию у подростка, поэтому данный курс специально разработан с учетом потребностей и интересов этой возрастной группы. Каждое занятие английским для подростков - тематическое и прежде всего направленно на развитие разговорных навыков, логики и критического мышления. Курс закрепляет осовы грамматики английского языка, развивает языковые навыки. 
+</div>
+
+<div class="tea1-read">
+<b>Уникальная программа для детей и подростков </b>
+<br><br>
+ Повышение успеваемости в школе<br>
+ Развитие разговорной речи<br>
+ Работа над отдельными навыками<br>
+ Работа над грамматикой<br>
+ Работа над произношение<br>
+ Работа над письмом и т.д<br>
+  </ul>
+ <a href="#inline2" class="fancybox">Читать подробнее</a></div>
+
+<img src="static/images/nb11.png" class="tea1">
+
+</div>
+
+          <div class="fix">                      
+<div class="seven">
+				<div class="fix">
+<h1>Наши преимущества</h1>
+
+<ul>
+<a href="#pre1" class="fancybox"><li><i>1</i>Качество<br>обучения</li></a>
+<a href="#pre2" class="fancybox"><li><i>2</i>Достижение<br>цели</li>
+<a href="#pre3" class="fancybox"><li><i>3</i>Индивидуальный<br>подход</li></a>
+<div class="clear"></div>
+<a href="#pre4" class="fancybox"><li><i>4</i>Уникальная методика</li></a>
+<a href="#pre6" class="fancybox"><li><i>4</i>Профессионализм</li></a>
+<a href="#pre5" class="fancybox"><li><i>5</i>Атмосфера ;)</li></a>
+</ul>
+
+                                </div>
+</div>                  
+<div id="pre1">
+<b class="inline-title">Качество обучения</b>
+<br><br>
+Независимо от Вашего уровня, возраста или амбиций, мы можем помочь Вам улучшить свой английский, который стал необходимостью в наши дни.
+</div>
+<div id="pre2">
+<b class="inline-title">Достижение цели</b>
+<br><br>
+Ваш преподаватель поможет Вам определить свои, цели подобрать подходящую для Вас программу, будет следить за вашими успехами.
+</div>
+<div id="pre3">
+<b class="inline-title">Индивидуальный подход</b>
+<br><br>
+Независимо от Вашего уровня, возраста или амбиций, мы можем помочь Вам улучшить свой английский, который стал необходимостью в наши дни.
+</div>
+<div id="pre4">
+<b class="inline-title">Уникальная методика</b>
+<br><br>
+Обучение английскому языку, в основе которого лежит уникальная методика (communicativeapproach), ведется только на английском языке.
+</div>
+<div id="pre5">
+<b class="inline-title">Атмосфера ;)</b>
+<br><br>
+Мы выступаем за качественное преподавание в уютной дружественной атмосфере и с тесными личными контактами между студентами, преподавателями и сотрудниками центра.
+</div>
+<div id="pre6">
+<b class="inline-title">Профессионализм</b>
+<br><br>
+Квалифицированные преподаватели с  опытом работы, ежегодно повышающие квалификации.
+</div>
+                                
+
+
+
+ 
+<div class="clear"></div>
+</div>
+                                </div>
+                                
+                                
+                                
+
+
+<div class="application">
+				<div class="fix">
+				
+<br><br><br><br><br><br>
+<div class="app1"><br><br><br><br><br><br><b>Заполните анкету</b>
+<i>до 01 октября <br>и получите 30% скидку на первый месяц обучения</i></div>
+
+<div class="app2"><b>ОСТАВЬТЕ ЗАЯВКУ</b>
+и получите подробную<br>
+консультацию о там как можно<br>
+стать нашим учеником</div>
+<div class="app3">
+<input type=text placeholder="ваше имя" class="app31">
+<input type=text placeholder="ваш ел.адрес" class="app32">
+<input type=text placeholder="ваш телефон" class="app33">
+<br><br>
+<input type=button value="ОТПРАВИТЬ">
+
+
+
+</div>                         
+                                </div>
+</div>
+                      
+                                
+                                
+                                
+
+
+<br>
+<a id="firmsonmap_biglink" href="http://maps.2gis.ru/#/?history=project/almaty/center/76.948239685301,43.239845798239/zoom/18/state/widget/id/9429940001024518/firms/9429940001024518">Перейти к большой карте</a>
+<script charset="utf-8" type="text/javascript" src="http://firmsonmap.api.2gis.ru/js/DGWidgetLoader.js"></script>
+<script charset="utf-8" type="text/javascript">new DGWidgetLoader({"borderColor":"#a3a3a3","width":"1261","height":"450","wid":"e09d58845499ffd32a439eaf8e561979","pos":{"lon":"76.948239685301","lat":"43.239845798239","zoom":"18"},"opt":{"ref":"hidden","card":["contacts","schedule","payings"],"city":"almaty"},"org":[{"id":"9429940001024518"}]});</script>
+<noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+<br>
+
+
+<a href="#inline4" class="fancybox">
+<!-- <div class="click">
+     <div class="overlay">тут твой текст</div>        
+</div></a>
+<div class="click">
+     <div class="overlay">тут твой текст</div>        
+</div>
+<div class="click">
+     <div class="overlay">тут твой текст</div>        
+</div>
+-->
+<div class="footer">
+				<div class="fix">
+<dd>2014 © NB class </dd>
+<dt>NB class Языковой центр Казахстан, г. Алматы</dt>
+                                </div>
+</div>
+
+
+<div id="inline-2all">
+<b class="inline-title">Пример таблицы</b>
+<br><br>
+<table class="inline-table">
+    <tbody>
+
+        <tr>
+            <th>Пример таблицы</th>
+            <th>Пример таблицы</th>
+            <th>Пример таблицы</th>
+            <th>Цена</th>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы.</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+
+    </tbody>
+</table>
+</div>
+
+
+
+<div id="inline-1all">
+<b class="inline-title">Пример таблицы</b>
+<br><br>
+<table class="inline-table">
+    <tbody>
+        <tr>
+            <th>Пример таблицы</th>
+            <th>Пример таблицы</th>
+            <th>Пример таблицы</th>
+            <th>Цена</th>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы.</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+
+<div id="inline-3all">
+<b class="inline-title">Пример таблицы</b>
+<br><br>
+<table class="inline-table">
+    <tbody>
+        <tr>
+            <th>Пример таблицы</th>
+            <th>Пример таблицы</th>
+            <th>Пример таблицы</th>
+            <th>Цена</th>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>ИПример таблицый</td>
+            <td c1="">
+            <div>Пример таблицы.</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы.</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+<div id="inline-4all">
+<b class="inline-title">Пример таблицы</b>
+<br><br>
+<table class="inline-table">
+    <tbody>
+        <tr>
+            <th>Пример таблицы</th>
+            <th>Пример таблицы</th>
+            <th>Пример таблицы</th>
+            <th>Цена</th>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Пример таблицы</td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td c1="">
+            <div>Пример таблицы</div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+
+
+</body>
+                                
+
+   	<!-- jQuery -->
+    <script src="static/js/jquery-1.11.0.min.js"></script>
+    <script src="static/js/jquery.bxslider.min.js"></script>
+    <script src="static/js/jquery.fancybox.pack.js"></script>
+    <script src="static/js/main.js"></script>
+    
+<script>
+	$(document).ready(function(){
+		$("#back-top").hide();
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 150) {
+					$('#back-top').fadeIn().css();
+				} else {
+					$('#back-top').fadeOut().css();
+				}
+			});
+
+		});
+	});
+</script>
+
+
+</html>
