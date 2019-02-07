@@ -6574,6 +6574,8 @@ html.is-active body .mb-menu {
     padding-left: 64px; }
     .test-btn:after {
       left: 25px; }
+  .test-btn-2 {
+    bottom: 60px; }
   .programms-table {
     margin-bottom: 25px; }
   .section__1-bottom {
@@ -6595,7 +6597,8 @@ html.is-active body .mb-menu {
   .section__1-top .free-lesson {
     left: 15px;
     width: auto;
-    max-width: none; }
+    max-width: none;
+    bottom: 220px; }
   .programms-table-cell {
     display: block;
     margin-bottom: 10px;

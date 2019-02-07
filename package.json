@@ -18,11 +18,12 @@
     "gulp-concat": "^2.6.1",
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
     "gulp-rsync": "0.0.8",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "gulp-rigger": "^0.5.8",
+    "natives": "^1.1.6",
     "vinyl-ftp": "^0.6.1"
   }
 }
