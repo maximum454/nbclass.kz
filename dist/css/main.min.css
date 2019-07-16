@@ -5223,7 +5223,7 @@ html.is-active body .mb-menu {
     font-family: proxima-bold; }
 
 .events-out {
-  background-color: #d43538;
+  background-color: #26e0d0;
   color: #fff;
   position: relative;
   z-index: 10; }
@@ -5256,7 +5256,7 @@ html.is-active body .mb-menu {
     width: 50vw; }
   .events-title h3 {
     text-transform: uppercase;
-    color: #d43538;
+    color: #26e0d0;
     font-size: 36px;
     font-family: gilroy-bold;
     padding-right: 50px; }
@@ -6537,6 +6537,8 @@ html.is-active body .mb-menu {
         -ms-flex: 0 0 90px !important;
             flex: 0 0 90px !important;
     margin-right: 14px !important; }
+  .cor-table-responsive {
+    overflow-x: scroll; }
   .cor-table-cell {
     font-size: 12px;
     padding: 10px; }
@@ -6574,6 +6576,8 @@ html.is-active body .mb-menu {
     padding-left: 64px; }
     .test-btn:after {
       left: 25px; }
+  .test-btn-2 {
+    bottom: 60px; }
   .programms-table {
     margin-bottom: 25px; }
   .section__1-bottom {
@@ -6595,7 +6599,8 @@ html.is-active body .mb-menu {
   .section__1-top .free-lesson {
     left: 15px;
     width: auto;
-    max-width: none; }
+    max-width: none;
+    bottom: 220px; }
   .programms-table-cell {
     display: block;
     margin-bottom: 10px;
